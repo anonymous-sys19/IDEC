@@ -1,26 +1,36 @@
 <header>
-  <div class="contLog">
-    <div>
-      <img class="logoidec" src="./images/IDEC.jpg" alt="" />
+    <div class="contLog">
+        <div>
+          <img class="logoidec" src="./images/IDEC.jpg" alt="" width="50px"/>
 
+        </div>
+        <div class="letTitle">
+          <span>Iglesia de Dios</span>
+          {{! <br> }}
+          <b>Tiempos de Gloria</b>
+        </div>
     </div>
-    <div class="letTitle">
-      <span>Iglesia de Dios</span>
-      {{! <br> }}
-      <b>Tiempos de Gloria</b>
+    
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" name="" id="" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/" class="not">Publicaciones</a></li>
+        <li><a href="http://www.palabrasdevida.com/rv1960/index.html" class="not">Biblia-RV 1960</a></li>
+        <li><a href={{book}} target="_blank">Libro Enoc</a></li>
+        <li><a href="/new-upload-file" target="_blank">Upload</a></li>
+        <li><a href="/" class="not">Contactar</a></li>
+      </ul>
+      
     </div>
-  </div>
-
-  <nav class="mynav">
-    <ul class="listNav">
-      <li><a href="/">HOME</a></li>
-      <li><a href="/" class="not">Publicaciones</a></li>
-      <li><a href="/" class="not">Biblia-RV 1960</a></li>
-      <li><a href={{book}} target="_blank">Libro Enoc</a></li>
-      <li><a href="/new-upload-file" target="_blank">Upload</a></li>
-      <li><a href="/" class="not">Contactar</a></li>
-
-    </ul>
+    
   </nav>
-  
+
+
 </header>

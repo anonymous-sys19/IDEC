@@ -1,6 +1,10 @@
 html{
-  width: auto;
+  width: inherit;
   height: -webkit-fill-available;
+}
+body{
+  width: -webkit-fill-available;
+  margin: auto;
 }
 marquee img{
   height: -webkit-fill-available;

@@ -1,7 +1,15 @@
+* {
+    box-sizing: initial;
+}
 header{
     width: 100%;
     height: 100%;
     margin: auto;
+}
+nav{
+    justify-content: start;
+    display: flex;
+    align-items: center;
 }
 .mynav:hover{
     background-color: rgba(0, 0, 0, 0.168);
@@ -31,44 +39,16 @@ header{
     margin: 1rem auto;
     align-items: center;
 }
-.listNav{
-    display: flex;
-    font-size: large;
-    margin: auto;
-    align-content: center;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    align-items: center;
-    flex-direction: row;
+/* Other part header  */
 
-}
-.listNav li{
-    display: flex;
-    /* padding: initial; */
-    /* padding: 0 1.5rem 0; */
-}
-.listNav li a{
-    color: black;
-    font: message-box;
-    font-weight: 400;
-    text-decoration: none;
-    padding: 1.5rem 1.2rem;
-}
-.listNav li a:hover{
-    background-color: rgba(0, 0, 0, 0.361);
-    color: aliceblue;
-}
-
-/*  Class main menu  */
 .mainMenu{
     background: url(/images/principal.jpg) no-repeat center;
-    height: 78%;
+    height: -webkit-fill-available;
     width: -webkit-fill-available;
     /* background-size: 100% 100%; */
-    position: fixed;
-    margin: auto;
-    padding: 4rem;
-    color: aliceblue; /* color definition title or writeng*/
+    margin: 5rem auto;
+    padding: 2rem 0 3rem 2rem;
+    color: aliceblue;
 }
 
 
@@ -87,15 +67,15 @@ header{
 /* text2 */
 .text2{
     
-    /* width: 80%; */
+    width: 70%;
     display: flex;
-    justify-content: start;
-    padding: 4rem;
+    padding: 0 0 0 4rem;
     align-content: center;
-    flex-wrap: nowrap;
+    justify-content: flex-start;
 
 }
 .text2 h4{
-    font-size: 3rem;
-    width: 50%;
+    font-size: -webkit-xxx-large;
+    width: -webkit-fill-available;
+    margin: revert;
 }
