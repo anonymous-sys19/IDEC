@@ -98,12 +98,14 @@ exports.signin = (req, res) => {
 
       req.session.token = token;
 
-      res.status(200).send({
+      //status(200)send
+      console.log ({
         id: user._id,
         username: user.username,
         email: user.email,
         roles: authorities,
       });
+      res.redirect('/uploader')
     });
 };
 
