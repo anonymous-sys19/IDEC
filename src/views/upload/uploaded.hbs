@@ -1,9 +1,66 @@
-{{> header}}
+<header>
+  <div class="contLog">
+    <div>
+      <img class="logoidec" src="./images/IDEC.jpg" alt="" width="50px" />
 
+    </div>
+    <div class="letTitle">
+      <span>Iglesia de Dios</span>
+      {{! <br> }}
+      <b>Tiempos de Gloria</b>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" name="" id="" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/" class="not">Publicaciones</a></li>
+        <li><a
+            href="http://www.palabrasdevida.com/rv1960/index.html"
+            class="not"
+          >Biblia-RV 1960</a></li>
+        {{!  }}
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Enoch
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href={{book}} target="_blank">Libro
+                  Enoch</a></li>
+              <li><a class="dropdown-item" href="#">Libro Enoch Video</a></li>
+
+            </ul>
+
+          </div>
+        </li>
+        {{!  }}
+        <li><a href="/" class="not">Contactar</a></li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+</header>
+
+{{!  }}
 <form action="/upload-file" enctype="multipart/form-data" method="post">
 
   <div class="card text-center">
-    
+
     <div class="card-body">
       <h5 class="card-title">Special title treatment</h5>
       <p class="card-text">With supporting text below as a natural lead-in to
@@ -27,5 +84,5 @@
 
 </form>
 <div id="visorArchivo" class="card text-center">
-    <!--Aqui se desplegará el fichero-->
+  <!--Aqui se desplegará el fichero-->
 </div>

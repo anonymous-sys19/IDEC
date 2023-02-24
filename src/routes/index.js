@@ -10,7 +10,7 @@ const path = require('path')
 
 router.get('/imagenes/:id', (req, res) => {
     res.sendFile(`imagenes/${id}`)
-    
+
 });
 
 //Routing
@@ -30,6 +30,10 @@ router.post('/upload-file', upload.array('uploaded_file'), function (req, res) {
     res.redirect('/')
 });
 
+// router.get('/login', (req, res) => {
+//     res.render('login/register')
+
+// });
 
 //Files book enock
 router.get('/book', (req, res) => {

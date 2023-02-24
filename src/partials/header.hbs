@@ -1,16 +1,16 @@
 <header>
-    <div class="contLog">
-        <div>
-          <img class="logoidec" src="./images/IDEC.jpg" alt="" width="50px"/>
+  <div class="contLog">
+    <div>
+      <img class="logoidec" src="./images/IDEC.jpg" alt="" width="50px" />
 
-        </div>
-        <div class="letTitle">
-          <span>Iglesia de Dios</span>
-          {{! <br> }}
-          <b>Tiempos de Gloria</b>
-        </div>
     </div>
-    
+    <div class="letTitle">
+      <span>Iglesia de Dios</span>
+      {{! <br> }}
+      <b>Tiempos de Gloria</b>
+    </div>
+  </div>
+
   <nav class="navbar">
     <div class="navbar-container container">
       <input type="checkbox" name="" id="" />
@@ -22,15 +22,46 @@
       <ul class="menu-items">
         <li><a href="/">HOME</a></li>
         <li><a href="/" class="not">Publicaciones</a></li>
-        <li><a href="http://www.palabrasdevida.com/rv1960/index.html" class="not">Biblia-RV 1960</a></li>
-        <li><a href={{book}} target="_blank">Libro Enoc</a></li>
+        <li><a
+            href="http://www.palabrasdevida.com/rv1960/index.html"
+            class="not"
+          >Biblia-RV 1960</a></li>
+        {{!  }}
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Enoch
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href={{book}} target="_blank">Libro
+                  Enoch</a></li>
+              <li><a class="dropdown-item" href="#">Libro Enoch Video</a></li>
+
+            </ul>
+
+          </div>
+        </li>
+        {{!  }}
         <li><a href="/new-upload-file" target="_blank">Upload</a></li>
+        <li>
+          <a
+            class="not"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >Login</a>
+
+        </li>
         <li><a href="/" class="not">Contactar</a></li>
       </ul>
-      
-    </div>
-    
-  </nav>
 
+    </div>
+
+  </nav>
 
 </header>

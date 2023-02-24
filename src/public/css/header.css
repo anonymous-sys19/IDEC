@@ -46,7 +46,7 @@ nav{
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     /* background-size: 100% 100%; */
-    margin: 5rem auto;
+    margin: auto;
     padding: 2rem 0 3rem 2rem;
     color: aliceblue;
 }
