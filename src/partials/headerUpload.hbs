@@ -1,0 +1,77 @@
+<header>
+  <div class="contLog">
+    <div>
+      <img class="logoidec" src="./images/IDEC.jpg" alt="" width="50px" />
+
+    </div>
+    <div class="letTitle">
+      <span>Iglesia de Dios</span>
+      
+      <b>Tiempos de Gloria</b>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" name="" id="" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/" class="not">Publicaciones</a></li>
+        {{!  }}
+
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Biblia
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a
+                  href={{url}}
+                  class="not"
+                  target="_blank"
+                >Biblia RVR 1960</a></li>
+
+            </ul>
+
+          </div>
+        </li>
+        {{!  }}
+        {{!  }}
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Enoch
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href={{book}} target="_blank">Libro
+                  Enoch</a></li>
+              <li><a class="dropdown-item" href="#">Libro Enoch Video</a></li>
+
+            </ul>
+
+          </div>
+        </li>
+        {{!  }}
+        <li><a href="/" class="not">Contactar</a></li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+</header>
