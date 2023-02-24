@@ -3,6 +3,7 @@ const router = express.Router()
 const upload = require("../controllers/index")
 //const rvr = require('../public/RVR/rvres.json')
 const book = 'Enoc_libro/LibrodeEnoc.pdf';
+const url = "http://www.palabrasdevida.com/rv1960/index.html";
 const path = require('path')
 
 
@@ -15,7 +16,7 @@ router.get('/imagenes/:id', (req, res) => {
 
 //Routing
 router.get('/', (req, res) => {
-    res.render('home', { book })
+    res.render('home', { book, url })
 });
 
 //Uploading GET
