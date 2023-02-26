@@ -35,7 +35,7 @@
               Biblia
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a href={{ url }} class="not" target="_blank">Biblia RVR 1960</a></li>
+              <li><a href={{url}} class="not" target="_blank">Biblia RVR 1960</a></li>
 
             </ul>
 
@@ -43,37 +43,53 @@
         </li>
         {{!  }}
         {{!  }}
-        <li>
-          <div class="dropdown">
-            <a
-              class="dropdown-toggle"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Enoch
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href={{book}} target="_blank">Libro
-                  Enoch</a></li>
-              <li><a class="dropdown-item" href="#">Libro Enoch Video</a></li>
+        {{#if user}}
+          <li>
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Enoch
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href={{book}} target="_blank">Libro
+                    Enoc</a></li>
+                <li><a class="dropdown-item" href="#">Libro Enoch Video</a></li>
 
-            </ul>
+              </ul>
 
-          </div>
-        </li>
+            </div>
+          </li>
+        {{/if}}
         {{!  }}
-        <li><a href="/new-upload-file" target="_blank">Upload</a></li>
-        <li>
-          <a
-            class="not"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >Login</a>
+        {{#if user}}
 
-        </li>
+          <li><a href="/new-upload-file" target="_blank">Upload</a></li>
+        {{/if}}
+
         <li><a href="/" class="not">Contactar</a></li>
+        
+        {{!  }}
+        {{#if user}}
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/profile">Profle</a></li>
+        {{else}}
+          <li>
+            <a
+              class="not"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >Registrate</a>
+
+          </li>
+        {{/if}}
+
+        {{!  }}
+
       </ul>
 
     </div>

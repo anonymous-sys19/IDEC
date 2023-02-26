@@ -1,0 +1,53 @@
+.profile {
+    width: 190px;
+    height: 254px;
+    background-image: linear-gradient(144deg,#8608b4, #492fed 60%,#bd6fda);
+    border: none;
+    position: relative;
+    margin: auto;
+    font-family: inherit;
+   }
+   
+   .profile span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+   }
+   
+   .profile .job {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+   }
+   
+   .profile .img {
+    width: 70px;
+    height: 70px;
+    background: #e8e8e8;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 20px;
+   }
+   
+   .profile button {
+    padding: 8px 25px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 30px;
+    background: #e8e8e8;
+    color: #111111;
+    font-weight: 600;
+   }
+   
+   .profile button:hover {
+    background: #212121;
+    color: #ffffff;
+   }
