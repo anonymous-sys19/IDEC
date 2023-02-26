@@ -71,20 +71,29 @@
         {{/if}}
 
         <li><a href="/" class="not">Contactar</a></li>
-        
+
         {{!  }}
         {{#if user}}
           <li><a href="/logout">Logout</a></li>
           <li><a href="/profile">Profle</a></li>
         {{else}}
           <li>
-            <a
-              class="not"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >Registrate</a>
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Register
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li> <a href="/signin">Signin</a></li>
+                <li><a href="/signup">Signup</a></li>
 
+              </ul>
+
+            </div>
           </li>
         {{/if}}
 

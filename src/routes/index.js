@@ -36,7 +36,6 @@ router.get('/book', isAuthenticated, (req, res, next) => {
 });
 
 // 
-
 router.get('/signup', (req, res, next) => {
   res.render('signup');
 });
@@ -46,6 +45,7 @@ router.post('/signup', passport.authenticate('local-signup', {
   failureRedirect: '/signup',
   failureFlash: true
 }));
+
 
 router.get('/signin', (req, res, next) => {
   res.render('signin');
