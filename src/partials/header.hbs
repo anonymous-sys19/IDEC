@@ -74,8 +74,22 @@
 
         {{!  }}
         {{#if user}}
+        
+          <div class="btn-group dropstart user-p">
+              <a
+                class="fa fa-user user-logo"
+                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
+              >
+                
+              </a>
+              <ul class="dropdown-menu user-menu" aria-labelledby="dropdownMenuButton1">
           <li><a href="/logout">Logout</a></li>
-          <li><a href="/profile">Profle</a></li>
+          <li ><a href="/profile">Profle</a></li>
+          </ul>
+
+            </div>
+          </li>
+        
         {{else}}
           <li>
             <div class="dropdown">

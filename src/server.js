@@ -7,7 +7,7 @@ const morgan = require('morgan')
 const expHBS = require('express-handlebars');
 
 
-// initializations
+// initializations 
 const app = express();
 require('./database');
 require('./passport/local-auth');
