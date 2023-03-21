@@ -43,10 +43,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-app.use(flash());
+app.use(flash()); 
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(web).require(path.join(__dirname,"web.config"))
 app.use((req, res, next) => {
   app.locals.signinMessage = req.flash('signinMessage');
   app.locals.signupMessage = req.flash('signupMessage');

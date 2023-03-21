@@ -1,13 +1,15 @@
 <header>
   <div class="contLog">
     <div>
-      <img class="logoidec" src="./images/IDEC.jpg" alt="" width="50px" />
+      <img class="logoidec animate__animated animate__rotateIn" src="./images/cruz.jpg" alt="" width="50px" />
+      <img class="logoidecCola animate__animated animate__zoomInLeft" src="./images/cola.jpg" alt="" width="50px" />
 
     </div>
-    <div class="letTitle">
-      <span>Iglesia de Dios</span>
-      {{! <br> }}
-      <b>Tiempos de Gloria</b>
+    <div class="letTitle animat animate__animated animate__zoomInUp">
+      <li class="listIDEC animate1"><span class="listSpanIDEC">I</span></li>
+      <li class="listIDEC animate2 "><span class="listSpanIDEC">D</span></li>
+      <li class="listIDEC animate3 "><span class="listSpanIDEC">E</span></li>
+      <li class="listIDEC animate4 "><span class="listSpanIDEC">C</span></li>
     </div>
   </div>
 
@@ -20,9 +22,7 @@
         <span class="line line3"></span>
       </div>
       <ul class="menu-items">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/" class="not">Publicaciones</a></li>
-        {{!  }}
+        
 
         <li>
           <div class="dropdown">
@@ -32,11 +32,37 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
+              HOME
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a href="/" class="not">Inicio</a></li>
+              <li><a href={{url}}  target="_blank" class="">Quienes somos</a></li>
+              <li><li><a href="/" class="not">Contactar</a></li></li>
+            </ul>
+
+          </div>
+        </li>
+
+
+
+
+
+        <li><a href="/" class="not">Publicaciones</a></li>
+        {{!  }}
+
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle not"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Biblia
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a href={{url}} class="not" target="_blank">Biblia RVR 1960</a></li>
-
+              <li><a href={{url}}  target="_blank">Biblia RVR 1960</a></li>
+              <li></li>
             </ul>
 
           </div>
@@ -47,7 +73,7 @@
           <li>
             <div class="dropdown">
               <a
-                class="dropdown-toggle"
+                class="dropdown-toggle not"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -55,9 +81,9 @@
                 Enoch
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href={{book}} target="_blank">Libro
+                <li><a class="dropdown-item not" href={{book}} target="_blank">Libro
                     Enoc</a></li>
-                <li><a class="dropdown-item" href="#">Libro Enoch Video</a></li>
+                <li><a class="dropdown-item not" href="#">Libro Enoch Video</a></li>
 
               </ul>
 
@@ -67,10 +93,10 @@
         {{!  }}
         {{#if user}}
 
-          <li><a href="/new-upload-file" target="_blank">Upload</a></li>
+          <li><a href="/new-upload-file" class="not" target="_blank">Upload</a></li>
         {{/if}}
 
-        <li><a href="/" class="not">Contactar</a></li>
+        
 
         {{!  }}
         {{#if user}}
@@ -83,8 +109,8 @@
                 
               </a>
               <ul class="dropdown-menu user-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a href="/logout">Logout</a></li>
-          <li ><a href="/profile">Profle</a></li>
+          <li><a href="/logout" class="not">Logout</a></li>
+          <li ><a href="/profile" class="not">Perfil</a></li>
           </ul>
 
             </div>

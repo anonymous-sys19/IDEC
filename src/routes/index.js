@@ -6,14 +6,14 @@ const router = express.Router()
 const book = 'Enoc_libro/LibrodeEnoc.pdf';
 const url = "http://www.palabrasdevida.com/rv1960/index.html";
 const path = require('path')
-
+const url_Text = "https://dailyverses.net/es/versiculo-de-la-biblia-al-azar"
 
 // Publiccaciones
 
 
 //Routing
 router.get('/', (req, res, next) => {
-  res.render('home', { book, url })
+  res.render('home', { book, url, url_Text })
 });
 
 //Uploading GET
@@ -61,6 +61,7 @@ router.post('/signin', passport.authenticate('local-signin', {
 // Profile
 router.get('/profile', isAuthenticated, (req, res, next) => {
   res.render('profile');
+
 
 });
 

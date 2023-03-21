@@ -3,10 +3,24 @@
 <div class="profile">
   <div class="card-border-top">
   </div>
-  <div class="img">
+  <div class="img  fa fa-user-circle">
+   
   </div>
-  <span> Person</span>
-  <p class="job"> Job Title</p>
-  <button> Click
+
+{{#if user}}
+   <span>Perfil {{#each user}}
+      
+  {{username}}
+    
+   {{/each}}</span>
+{{/if}}
+ <p class="job">Bien venido 
+  {{#each user}}
+
+    {{username}} 
+
+  {{/each}}</p>
+
+  <button type="submit" > Click
   </button>
 </div>
