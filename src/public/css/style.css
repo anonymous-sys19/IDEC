@@ -6,12 +6,11 @@ body{
   width: -webkit-fill-available;
   margin: auto;
 }
-marquee img{
-  height: -webkit-fill-available;
-  width: 50px;
+
+
+#exampleModal{
+  margin: 3rem 1rem 0 1rem;
 }
-
-
 #archivoInput {
     max-width: -webkit-fill-available;
 }

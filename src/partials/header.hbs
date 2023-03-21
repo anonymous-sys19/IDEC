@@ -1,3 +1,4 @@
+
 <header>
   <div class="contLog">
     <div>
@@ -35,9 +36,9 @@
               HOME
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a href="/" class="not">Inicio</a></li>
-              <li><a href={{url}}  target="_blank" class="">Quienes somos</a></li>
-              <li><li><a href="/" class="not">Contactar</a></li></li>
+              <li class="itemN"><a href="/" class="itemNot">Inicio</a></li>
+              <li class="itemN"><a href={{url}}  target="_blank" class="itemNot">Quienes somos</a></li>
+              <li class="itemN"><a href="/" class="itemNot">Contactar</a></li>
             </ul>
 
           </div>
@@ -61,7 +62,7 @@
               Biblia
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a href={{url}}  target="_blank">Biblia RVR 1960</a></li>
+              <li class="itemN"><a href={{url}} class="itemNot" target="_blank">Biblia RVR 1960</a></li>
               <li></li>
             </ul>
 
@@ -81,9 +82,9 @@
                 Enoch
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item not" href={{book}} target="_blank">Libro
+                <li class="itemN"><a class="dropdown-item itemNot" href={{book}} target="_blank">Libro
                     Enoc</a></li>
-                <li><a class="dropdown-item not" href="#">Libro Enoch Video</a></li>
+                <li class="itemN"><a class="dropdown-item itemNot" href="#">Libro Enoch Video</a></li>
 
               </ul>
 
@@ -109,8 +110,8 @@
                 
               </a>
               <ul class="dropdown-menu user-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a href="/logout" class="not">Logout</a></li>
-          <li ><a href="/profile" class="not">Perfil</a></li>
+          <li class="itemN"><a href="/logout" class="not">Logout</a></li>
+          <li class="itemN"><a href="/profile" class="not">Perfil</a></li>
           </ul>
 
             </div>
@@ -128,8 +129,8 @@
                 Register
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li> <a href="/signin">Signin</a></li>
-                <li><a href="/signup">Signup</a></li>
+                <li class="itemN"> <a id="element1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+                <li class="itemN" ><a id="element2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</a></li>
 
               </ul>
 
@@ -146,3 +147,6 @@
   </nav>
 
 </header>
+
+{{> signin}}
+{{>signup}}
