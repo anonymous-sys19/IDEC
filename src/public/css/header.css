@@ -1,28 +1,32 @@
 * {
     box-sizing: initial;
 }
-header{
+
+header {
     width: 100%;
     /* height: 100%; */
     margin: auto;
 }
-nav{
+
+nav {
     justify-content: start;
     display: flex;
     align-items: center;
 }
-.mynav:hover{
+
+.mynav:hover {
     background-color: rgba(0, 0, 0, 0.168);
 }
 
 .contLog {
     display: flex;
     background: white;
-   
+
     margin: 1rem auto;
     align-items: center;
 }
-.letTitle{
+
+.letTitle {
     display: inline-flex;
 }
 
@@ -30,14 +34,17 @@ nav{
     width: 130px;
     height: 120px;
 }
-.listIDEC{
+
+.listIDEC {
     list-style: none;
 }
-.logoidecCola{
+
+.logoidecCola {
     /* position: absolute;
     top: 1px; */
 }
-.listSpanIDEC{
+
+.listSpanIDEC {
     FONT-SIZE: 5rem;
     font-weight: 800;
     color: darkblue;
@@ -46,15 +53,44 @@ nav{
 
 /* Other part header  */
 
-.mainMenu{
-    background: url(/images/principal.jpg) no-repeat center;
+.mainMenu {
+    background: url(/images/video.mp4) no-repeat center;
     height: auto;
     width: -webkit-fill-available;
     /* background-size: 100% 100%; */
     margin: auto;
     padding: 2rem 0 3rem 2rem;
     color: aliceblue;
+    display: grid;
+    position: relative;
+    z-index: 0;
 }
+
+/*  */
+.video-container {
+    margin: 0 0 7rem 0;
+}
+
+.video-container video {
+    position: absolute;
+    object-fit: cover;
+    z-index: 0;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    color: aliceblue;
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .caption {
+    z-index: 0;
+    position: relative;
+    text-align: center;
+    color: #dc0000;
+    padding: 10px;
+}
+
+/*  */
 
 
 /* .user-menu{
@@ -63,7 +99,7 @@ nav{
     top: 0;
     margin: auto;
 } */
-.user-p{
+.user-p {
     font-size: 2rem;
     border-radius: 100%;
     /* border: 3px solid black; */
@@ -77,28 +113,33 @@ nav{
     margin: 1rem auto;
 }
 
-  
-.mainMenu img{
+
+.mainMenu img {
     width: -webkit-fill-available;
     height: 41.4rem;
 }
-.mainMenu .text1 p{
+
+.mainMenu .text1 p {
     font-size: x-large;
     font-weight: 400;
 }
+
 /* text2 */
-.text2{
-    
+.text2 {
+
     width: 70%;
     display: flex;
-    padding: 0 0 0 4rem;
     align-content: center;
     justify-content: flex-start;
 
 }
-.text2 h4{
+.text1, .text3{
+    display: flex;
+}
+
+.text2 h4 {
     font-size: -webkit-xxx-large;
     width: -webkit-fill-available;
     margin: revert;
-}
 
+}

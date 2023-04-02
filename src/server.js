@@ -11,6 +11,7 @@ const expHBS = require('express-handlebars');
 const app = express();
 require('./database');
 require('./passport/local-auth');
+app.use(express.json())
 
 // settings
 
@@ -25,12 +26,15 @@ var hbs = expHBS.create({
   partialsDir: path.join(__dirname, './partials')
 })
 app.engine('hbs', hbs.engine)
+
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs')
 
 
 // Obteniendo Las Rutas static
 app.use(express.static(path.join(__dirname, '/public')));
+require('./server/database/database')();
+
 // app.use(router)
 //Configure database 
 

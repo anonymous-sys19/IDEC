@@ -10,24 +10,21 @@ const url_Text = "https://dailyverses.net/es/versiculo-de-la-biblia-al-azar"
 
 // Publiccaciones
 
-
+const controller = require('../server/controller/controller');
+const store = require('../server/middleware/multer')
+const UploadModel = require('../server/model/schema');
+const fs = require('fs');
 //Routing
+
+// Views images fom db
 router.get('/', (req, res, next) => {
-  res.render('home', { book, url, url_Text })
+  res.render('home', { book, url, url_Text });
+
 });
 
-//Uploading GET
-router.get('/new-upload-file', isAuthenticated, (req, res, next) => {
-  res.render('upload/uploaded')
-});
-
-
-// UPLOADING POST
-router.post('/uploading-file', upload.array('uploaded_file'), function (req, res, next) {
-
-  console.log(req.file)
-  res.redirect('/')
-});
+// routes
+router.get('/new-upload-file', controller.home);
+router.post('/uploadmultiple', store.array('images', 12), controller.uploads)
 
 
 //Files book enock
@@ -37,7 +34,7 @@ router.get('/book', isAuthenticated, (req, res, next) => {
 
 // 
 router.get('/signup', (req, res, next) => {
-  res.render('signup');
+  res.render('login/signup');
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
@@ -48,7 +45,7 @@ router.post('/signup', passport.authenticate('local-signup', {
 
 
 router.get('/signin', (req, res, next) => {
-  res.render('signin');
+  res.render('login/signin');
 });
 
 
@@ -62,8 +59,14 @@ router.post('/signin', passport.authenticate('local-signin', {
 router.get('/profile', isAuthenticated, (req, res, next) => {
   res.render('profile');
 
-
 });
+
+//Public
+router.get("/publico", async (req, res, next) => {
+  const all_images = await UploadModel.find()
+  res.render('publico', { images: all_images });
+})
+
 
 router.get('/logout', function (req, res, next) {
   req.logout(function (err) {
@@ -83,6 +86,9 @@ function isAuthenticated(req, res, next) {
 
   res.redirect('/')
 }
+
+
+
 
 
 

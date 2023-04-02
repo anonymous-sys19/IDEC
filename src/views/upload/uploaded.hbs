@@ -1,33 +1,41 @@
 {{layouts/main}}
 {{> header}}
 
-<form action="/upload-file" enctype="multipart/form-data" method="post">
-
-  <div class="card text-center">
-
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to
-        additional content.</p>
-
-      <input
-        type="file"
-        name="uploaded_file"
-        id="archivoInput"
-        class="form-control-file btn btn-primary"
-        onchange="return validarExt()"
-        multiple
-      />
-
+<section class="section my-4">
+  <div class="container text-center">
+    <div class="title py-5">
+      <h1>Node File Uploader</h1>
+      <p class="subtitle">Upload Images to the <strong>Server</strong></p>
     </div>
-    <input type="submit" value="Upload" id="upload" class="btn btn-primary" />
-    <div class="card-footer text-muted">
-      2 days ago
+
+    <div class="row justify-content-center">
+      <div class="cont-Form">
+        <form
+          action="/uploadmultiple"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          <div class="rowI">
+            <div class="colF">
+              <input
+                type="file"
+                class="formInput"
+                name="images"
+                id="formFile"
+                multiple
+              />
+            </div>
+            <div class="colB">
+              <input
+                type="submit"
+                class="btn btn-warning"
+                value="Upload Images"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+
   </div>
-
-</form>
-<div id="visorArchivo" class="card text-center">
-  <!--Aqui se desplegará el fichero-->
-</div>
-
+</section>
