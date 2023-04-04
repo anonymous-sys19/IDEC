@@ -69,13 +69,14 @@ nav {
 /*  */
 .video-container {
     margin: 0 0 7rem 0;
+    height: 100%;
 }
 
 .video-container video {
     position: absolute;
     object-fit: cover;
     z-index: 0;
-    height: auto;
+    height: 100%;
     width: 100%;
     margin: auto;
     color: aliceblue;

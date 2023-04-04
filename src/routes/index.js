@@ -55,11 +55,13 @@ router.post('/signin', passport.authenticate('local-signin', {
   failureFlash: true
 }));
 
-// Profile
-router.get('/profile', isAuthenticated, (req, res, next) => {
-  res.render('profile');
+// Profile 
+// isAuthenticated => Validate if Autenticate
+router.get("/profile", isAuthenticated, (req, res) => {
+  res.render("profile")
+})
+//  IS redirect to profile
 
-});
 
 //Public
 router.get("/publico", async (req, res, next) => {
@@ -67,7 +69,7 @@ router.get("/publico", async (req, res, next) => {
   res.render('publico', { images: all_images });
 })
 
-
+// Logaour 
 router.get('/logout', function (req, res, next) {
   req.logout(function (err) {
     if (err) {
