@@ -32,10 +32,6 @@ app.engine('hbs', hbs.engine)
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs')
 
-// app.engine('hbs', expressHandlebars.engine({
-//   handlebars: allowInsecurePrototypeAccess(Handlebars)
-// }));
-// app.set('view engine', 'hbs');
 
 
 // Obteniendo Las Rutas static
