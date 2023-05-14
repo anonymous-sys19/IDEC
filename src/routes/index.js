@@ -7,13 +7,15 @@ const book = 'Enoc_libro/LibrodeEnoc.pdf';
 const url = "http://www.palabrasdevida.com/rv1960/index.html";
 const path = require('path')
 const url_Text = "https://dailyverses.net/es/versiculo-de-la-biblia-al-azar"
-
+const userSchema = require("../models/user")
 // Publiccaciones
 
 const controller = require('../server/controller/controller');
 const store = require('../server/middleware/multer')
 const UploadModel = require('../server/model/schema');
 const fs = require('fs');
+const { userInfo } = require('os');
+const user = require('../models/user');
 //Routing
 
 // Views images fom db
@@ -57,16 +59,57 @@ router.post('/signin', passport.authenticate('local-signin', {
 
 // Profile 
 // isAuthenticated => Validate if Autenticate
-router.get("/profile", isAuthenticated, (req, res) => {
-  res.render("profile")
+router.get("/profile-admin", isAuthenticated, (req, res, next) => {
+  userSchema
+    .find()
+    .then(data => {
+      res.render("administrativo", { data: data.map(datos => datos.toJSON()) })
+      //res.json(data)
+
+    })
+    .catch((error) => res.json({ mesagge: error }))
+
+  //res.json(data)
 })
 //  IS redirect to profile
+//VIEW USER ALL 
+router.get("/profile", isAuthenticated, (req, res, next) => {
+  res.render("profile")
+  //res.json(data)
 
+})
 
 //Public
 router.get("/publico", async (req, res, next) => {
   const all_images = await UploadModel.find()
+  //console.log(all_images);
   res.render('publico', { images: all_images });
+})
+
+router.delete("/publico/:id", async (req, res) => { //Delete image of publication
+  const id = req.params.id
+  console.log(id);
+
+  try {
+    const all_id = await UploadModel.findByIdAndDelete({ _id: id })
+    console.log(all_id);
+
+    if (!all_id) {
+      res.json({
+        estado: false,
+        message: "No se pudo eliminar"
+      })
+
+    } else {
+      res.json({
+        estado: true,
+        message: "Eliminso"
+      })
+    }
+  } catch (error) {
+
+  }
+
 })
 
 // Logaour 

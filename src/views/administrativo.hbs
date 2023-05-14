@@ -1,0 +1,66 @@
+{{ layouts/main }}
+{{> header}}
+
+ <div class="profile">
+  <div class="card-border-top">
+  </div>
+  <div class="img fa fa-user-circle">
+   
+  </div>
+
+{{#if user}}
+   <span>Perfil {{#each user}}
+      
+  {{username}}
+    
+   {{/each}}</span>
+{{/if}}
+ <p class="job">Bien venido 
+  {{#each user}}
+
+    {{username}} 
+
+  {{/each}}</p> 
+
+
+  <section class="user-table">
+    <div class="user-table-div">
+      <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+          {{#if data}}
+     
+          {{#each data}}
+        
+            <tr>
+              <td>{{_id}}</td>
+              <td>{{ username }}</td>
+              <td>{{ email }}</td>
+              <td>{{ password }}</td>
+                
+            </tr>
+          {{/each}}
+      
+          {{/if}}
+          </tbody>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+        scrollY: '200px',
+        scrollCollapse: true,
+        paging: false,
+    });
+});
+</script>

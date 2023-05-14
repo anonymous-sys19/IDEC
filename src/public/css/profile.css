@@ -1,11 +1,12 @@
 .profile {
-    width: 190px;
-    height: 254px;
-    background-image: linear-gradient(144deg, #8608b4, #492fed 60%, #bd6fda);
+    width: auto;
+    height: auto;
+    background-image: linear-gradient(10deg, #141619, #dee2e6 60%, #141619);
     border: none;
     position: relative;
-    margin: auto;
     font-family: inherit;
+    margin: 0.5rem 1rem;
+    padding: 2rem 0;
 }
 
 .profile span {
@@ -27,8 +28,8 @@
 }
 
 .profile .img {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     background: #e8e8e8;
     border-radius: 100%;
     margin: auto;
@@ -42,12 +43,12 @@
     background: #9bffa769;
     border-radius: 100%;
     margin: auto;
-    font-size: 70;
+    font-size: 100;
     display: flex;
     justify-content: center;
 }
-.profile button {
-    padding: 8px 25px;
+/* .profile button {
+    padding: 1rem 6rem;
     display: block;
     margin: auto;
     border-radius: 8px;
@@ -56,9 +57,15 @@
     background: #e8e8e8;
     color: #111111;
     font-weight: 600;
+    width: auto;
 }
 
 .profile button:hover {
     background: #212121;
     color: #ffffff;
+} */
+
+.user-table{
+    margin: 2rem 1rem;
+    background: gainsboro;
 }

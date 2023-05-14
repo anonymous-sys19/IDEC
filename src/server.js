@@ -4,8 +4,9 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const morgan = require('morgan')
+const Handlebars = require('handlebars')
 const expHBS = require('express-handlebars');
-
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 // initializations 
 const app = express();
@@ -19,16 +20,22 @@ app.use(express.json())
 app.set('server', process.env.PORT || 5500)
 
 
-// 
+
 var hbs = expHBS.create({
   extname: '.hbs',
   // layoutsDir:'views/loyauts',
-  partialsDir: path.join(__dirname, './partials')
+  partialsDir: path.join(__dirname, './partials'),
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 })
 app.engine('hbs', hbs.engine)
 
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs')
+
+// app.engine('hbs', expressHandlebars.engine({
+//   handlebars: allowInsecurePrototypeAccess(Handlebars)
+// }));
+// app.set('view engine', 'hbs');
 
 
 // Obteniendo Las Rutas static
