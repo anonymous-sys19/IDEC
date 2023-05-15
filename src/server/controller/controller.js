@@ -27,7 +27,10 @@ exports.uploads = (req, res, next) => {
         let finalImg = {
             filename: files[index].originalname,
             contentType: files[index].mimetype,
-            imageBase64: src
+            imageBase64: src,
+            user: req.user._id,
+            user_name: req.user.name,
+
             
         }
 

@@ -6,6 +6,7 @@ const Connect = async () => {
         const con = await mongoose.connect("mongodb+srv://anonimo:cyber@anonimo.d9yhmae.mongodb.net/?retryWrites=true&w=majority" , {
             useNewUrlParser : true,
             useUnifiedTopology: true,
+            strictQuery: false,
             // useFindAndModify: false,
             // useCreateIndex: true
         })
