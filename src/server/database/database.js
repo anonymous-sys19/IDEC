@@ -9,6 +9,7 @@ const Connect = async () => {
             strictQuery: false,
             // useFindAndModify: false,
             // useCreateIndex: true
+            
         })
 
         console.log(`MongoDB Connected : ${con.connection.host}`);

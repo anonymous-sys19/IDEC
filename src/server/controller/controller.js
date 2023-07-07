@@ -1,9 +1,10 @@
 const UploadModel = require('../model/schema');
 const fs = require('fs');
-
+//const File = require('../model/File');
 exports.home = async (req, res) => {
-    res.render('upload/uploaded');
+    res.render('upload/upload-files');
 }
+
 
 exports.uploads = (req, res, next) => {
     const files = req.files;
@@ -31,7 +32,7 @@ exports.uploads = (req, res, next) => {
             user: req.user._id,
             user_name: req.user.name,
 
-            
+
         }
 
         let newUpload = new UploadModel(finalImg);
@@ -40,7 +41,7 @@ exports.uploads = (req, res, next) => {
             .save()
             .then(() => {
                 return { msg: `${files[index].originalname} Uploaded Successfully...!` }
-                
+
             })
             .catch(error => {
                 if (error) {
@@ -63,3 +64,31 @@ exports.uploads = (req, res, next) => {
 }
 
 //
+
+// exports.uploads_mp3 = (req, res, next) => {
+//     const mp3Files = req.files;
+
+//     if (!mp3Files || mp3Files.length === 0) {
+//         res.render('upload', { error: 'Por favor, selecciona al menos un archivo .mp3' });
+//     } else {
+//         try {
+//             // Guardar la información de cada archivo en MongoDB
+//             const savedFiles = [];
+//             for (const mp3File of mp3Files) {
+//                 const file = new File({
+//                     filename: mp3File.filename,
+//                     originalname: mp3File.originalname,
+//                     mimetype: mp3File.mimetype,
+//                     size: mp3File.size
+//                 });
+//                 const savedFile = file.save(); //await
+//                 savedFiles.push(savedFile);
+//             }
+
+//             // Renderizar la vista para mostrar los archivos subidos
+//             res.render('uploaded', { mp3Files: savedFiles });
+//         } catch (error) {
+//             res.render('upload', { error: 'Error al guardar los archivos en MongoDB' });
+//         }
+//     }
+// }

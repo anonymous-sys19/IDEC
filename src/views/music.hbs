@@ -1,0 +1,20 @@
+
+{{> header}}
+
+
+  <h1>Aplicación de carga de archivos</h1>
+
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="audio" accept="audio/mpeg">
+    <button type="submit">Cargar</button>
+  </form>
+
+  <ul>
+    {{#each files}}
+      <li>
+        <audio src="/play/{{_id}}" controls></audio>
+        {{name}}
+      </li>
+    {{/each}}
+  </ul>
+

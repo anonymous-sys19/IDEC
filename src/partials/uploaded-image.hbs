@@ -1,0 +1,39 @@
+
+<section class="section my-4">
+  <div class="container text-center">
+    <div class="title py-5">
+      <h1>Node File Uploader</h1>
+      <p class="subtitle">Upload Images to the <strong>Server</strong></p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="cont-Form">
+        <form
+          action="/uploadmultiple"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          <div class="rowI">
+            <div class="colF">
+              <input
+                type="file"
+                class="formInput"
+                name="images"
+                id="formFile"
+                multiple
+              />
+            </div>
+            <div class="colB">
+              <input
+                type="submit"
+                class="btn btn-warning"
+                value="Upload Images"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>

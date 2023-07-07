@@ -1,6 +1,5 @@
 const express = require('express');
 const passport = require('passport');
-const upload = require("../controllers/index")
 const router = express.Router()
 //const rvr = require('../public/RVR/rvres.json')
 const book = 'Enoc_libro/LibrodeEnoc.pdf';
@@ -9,7 +8,8 @@ const path = require('path')
 const url_Text = "https://dailyverses.net/es/versiculo-de-la-biblia-al-azar"
 const userSchema = require("../models/user")
 // Publiccaciones
-
+const multer = require('multer');
+const mongoose = require('mongoose');
 const controller = require('../server/controller/controller');
 const store = require('../server/middleware/multer')
 const UploadModel = require('../server/model/schema');
@@ -18,6 +18,12 @@ const { userInfo } = require('os');
 const user = require('../models/user');
 //Routing
 
+
+
+
+
+
+
 // Views images fom db
 router.get('/', (req, res, next) => {
   res.render('home', { book, url, url_Text });
@@ -25,9 +31,11 @@ router.get('/', (req, res, next) => {
 });
 
 // routes
-router.get('/new-upload-file', controller.home);
+router.get('/new-upload', (req, res) => {
+  res.render('upload/upload-files')
+})
 router.post('/uploadmultiple', store.array('images', 12), controller.uploads)
-
+// router.post('/upload', upload.array('mp3Files', 5), controller.uploads_mp3)
 
 //Files book enock
 router.get('/book', isAuthenticated, (req, res, next) => {

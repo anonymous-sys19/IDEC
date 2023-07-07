@@ -6,7 +6,7 @@ const passport = require('passport');
 const morgan = require('morgan')
 const Handlebars = require('handlebars')
 const expHBS = require('express-handlebars');
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 
 // initializations 
 const app = express();
@@ -25,7 +25,12 @@ var hbs = expHBS.create({
   extname: '.hbs',
   // layoutsDir:'views/loyauts',
   partialsDir: path.join(__dirname, './partials'),
-  handlebars: allowInsecurePrototypeAccess(Handlebars)
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+  helpers: {
+    durations: function (index) {
+      return this.durations[index];
+    }
+  }
 })
 app.engine('hbs', hbs.engine)
 
@@ -50,7 +55,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-app.use(flash()); 
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => {
@@ -66,5 +71,5 @@ app.use('/', require('./routes/index'));
 
 // On Port: 
 app.listen(app.get('server'), () => {
-    console.log(`Server is Running ${app.get('server')}`);
+  console.log(`Server is Running ${app.get('server')}`);
 })
