@@ -3,7 +3,7 @@ const passport = require('passport');
 const router = express.Router()
 //const rvr = require('../public/RVR/rvres.json')
 const book = 'Enoc_libro/LibrodeEnoc.pdf';
-const url = "http://www.palabrasdevida.com/rv1960/index.html";
+// const book_url_rvr1960 = "http://www.palabrasdevida.com/rv1960/index.html";
 const path = require('path')
 const url_Text = "https://dailyverses.net/es/versiculo-de-la-biblia-al-azar"
 const userSchema = require("../models/user")
@@ -26,10 +26,13 @@ const user = require('../models/user');
 
 // Views images fom db
 router.get('/', (req, res, next) => {
-  res.render('home', { book, url, url_Text });
+  res.render('home', {book });
 
 });
-
+// Biblia
+router.get('/biblia', (req, res) =>{
+  res.render('book/biblia')
+})
 // routes
 router.get('/new-upload', (req, res) => {
   res.render('upload/upload-files')

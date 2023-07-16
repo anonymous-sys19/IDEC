@@ -1,30 +1,11 @@
-<article class="SOBRE-NOSOTROS" id="SOBRE-NOSOTROS">
-  {{! <div class="cont-nosotros card" >
-    <div class="contenedor card-body">
-      <div class="cont-1">
-        <img
-          src="https://raw.githubusercontent.com/anonymous-sys19/IDEC/main/src/public/images/IDEC.jpg"
-          class="img-fluid rounded-start cont-img"
-          alt="..."
-        />
-      </div>
-      <div class="cont-2 card-body">
-        <div class="card">
-          <h5 class="">Card title</h5>
-          <p class="">This is a wider card with supporting text below
-            as a natural lead-in to additional content. This content is a little
-            bit longer.</p>
-          
-        </div>
-      </div>
-    </div>
-  </div> }}
 
-  <div class="row cont-row">
-    <div class="col-sm-6">
+<main class="main">
+  <div class="sobreNosotros">
+
+    <div id="item-1">
       <div class="card">
-        <div class="card-body">
-          {{!-- Card --}}
+        <div class="card-body"> 
+          {{! Card }}
           <div class="header">
             <img src="./images/IDEC.jpg" alt="" />
           </div>
@@ -34,14 +15,15 @@
               mollitia, molestiae quas vel sint commodi.
             </p>
           </div>
-          
+
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+
+    <div id="item-2">
       <div class="card">
         <div class="card-body">
-          {{!-- CARD --}}
+          {{! CARD }}
           <div class="header">
             <img src="./images/IDEC.jpg" alt="" />
           </div>
@@ -51,14 +33,28 @@
               mollitia, molestiae quas vel sint commodi.
             </p>
           </div>
-          
-
         </div>
       </div>
-
     </div>
+
+    <div id="item-0">
+      <div class="card">
+        <div class="card-body">
+          {{! CARD }}
+          <div class="header">
+            <img src="./images/IDEC.jpg" alt="" />
+          </div>
+          <div class="infoo">
+            <p class="titlee">Historia IDEC</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia, molestiae quas vel sint commodi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  {{> nacimiento-idec }}
-
-</article>
+</main>
+{{>footer}}

@@ -62,8 +62,11 @@
               Biblia
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li class="itemN"><a href={{url}} class="itemNot" target="_blank">Biblia RVR 1960</a></li>
-              <li></li>
+              <li class="itemN">
+                {{#if url }}
+                <a href={{biblia}} >Biblia RVR 1960</a>
+                {{/if}}
+              </li>
             </ul>
 
           </div>

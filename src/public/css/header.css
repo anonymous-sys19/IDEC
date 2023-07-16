@@ -1,7 +1,9 @@
 * {
     box-sizing: initial;
 }
-
+article{
+    display: grid;
+}
 header {
     width: 100%;
     /* height: 100%; */
