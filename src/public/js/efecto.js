@@ -20,3 +20,10 @@ function borrarAlerta() {
     tiempo = setInterval(executeAnimation, 9000)
   }
 animationInterval()
+
+
+function scroll_top() {
+    window.scrollTo({ top: 0 });
+    
+    
+}

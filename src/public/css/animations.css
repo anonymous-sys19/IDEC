@@ -101,10 +101,10 @@
 .letTitleAnimation {
     white-space: nowrap;
     border-right: 4px solid;
-    width: 24ch;
-
-    animation: typing 4s steps(20) infinite, blink .8s infinite step-end alternate;
+    width: 19ch;
+    animation: typing 6s steps(20) infinite, blink 0.9s infinite step-end alternate;
     overflow: hidden;
+    -webkit-animation: typing 6s steps(20) infinite, blink 0.9s infinite step-end alternate;
 }
 
 

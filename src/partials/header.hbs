@@ -15,13 +15,10 @@
   </div>
 
   <nav class="navbar">
-    <div class="navbar-container container">
-      <input type="checkbox" name="" id="" />
-      <div class="hamburger-lines">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
-      </div>
+    <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      
+      
       <ul class="menu-items">
         
 
@@ -149,6 +146,9 @@
       </ul>
 
     </div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
 
   </nav>
 
@@ -156,3 +156,18 @@
 
 {{> signin}}
 {{>signup}}
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.querySelector(".openbtn").style.display = "contents";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.querySelector(".openbtn").style.display = "";
+}
+</script>

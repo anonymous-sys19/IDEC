@@ -92,6 +92,7 @@ div.desc {
   .responsive {
     width: 100%;
   }
+  
 }
 
 .clearfix:after {
@@ -140,7 +141,7 @@ div.desc {
   height: -webkit-fill-available;
 }
 .header img{
-  max-width: 500px;
+  max-width: max-content;
 }
 
 .infoo {
