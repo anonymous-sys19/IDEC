@@ -4,7 +4,7 @@
     "bcrypt-nodejs": "0.0.3",
     "connect-flash": "^0.1.1",
     "express": "^4.18.2",
-    "express-handlebars": "^7.1.0",
+    "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "get-audio-duration": "^4.0.1",
     "mongoose": "^7.4.0",
