@@ -4,7 +4,7 @@
   "description": "Pagina en Desarrollo de Iglesia del evangelio completo\r <a href=\"https://iglesia-de-dios-finca-dos.onrender.com/\">Enter</a>",
   "main": "index.js",
   "engines": {
-    "node": "16.0.0"
+    "node": "18.17.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
