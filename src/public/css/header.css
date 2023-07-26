@@ -110,14 +110,15 @@ nav {
     font-size: 2rem;
     border-radius: 100%;
     /* border: 3px solid black; */
-    display: grid;
+    display: flex;
     justify-content: center;
     text-align: center;
     padding: 0.4rem;
-    position: absolute;
-    right: 15px;
-    top: 2px;
+    position: absolute !important;
+    top: -1.5rem;
     margin: 1rem auto;
+    color: antiquewhite;
+    left: 0;
 }
 
 

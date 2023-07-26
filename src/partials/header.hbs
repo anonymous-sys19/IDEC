@@ -93,9 +93,9 @@
         {{/if}}
         {{!  }}
         {{#if user}}  
-          <ul>
+          
             <li class=""><a href="/new-upload" class="Not" target="_blank">Upload</a></li>
-          </ul>
+          
         {{/if}}
 
         
@@ -103,7 +103,7 @@
         {{!  }}
         {{#if user}}
         
-          <div class="btn-group dropstart user-p">
+          <div class="btn-group dropend user-p">
               <a
                 class="fa fa-user user-logo"
                 data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
@@ -111,9 +111,9 @@
                 
               </a>
               <ul class="dropdown-menu user-menu" aria-labelledby="dropdownMenuButton1">
-          <li class="itemN"><a href="/profile" class="not">Perfil</a></li>
-          <li class="itemN"><a href="/profile-admin" class="not">Admin</a></li>
-          <li class="itemN"><a href="/logout" class="not">Logout</a></li>
+          <li class="itemN"><a href="/profile" class="not dropdown-item">Perfil</a></li>
+          <li class="itemN"><a href="/profile-admin" class="not dropdown-item">Admin</a></li>
+          <li class="itemN"><a href="/logout" class="not dropdown-item">Logout</a></li>
           
           </ul>
 

@@ -129,7 +129,7 @@ router.get('/logout', function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.redirect('/');
+    res.redirect('login');
   });
 });
 
@@ -149,6 +149,6 @@ function isAuthenticated(req, res, next) {
 
 
 module.exports = router;
-// recorrer json con nodejs?
+// recorrer json whidt nodejs?
 
 //
