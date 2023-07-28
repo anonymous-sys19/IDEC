@@ -7,7 +7,7 @@ const userSchema = new Schema({
   username: { type: String, require: true},
   email: { type: String, require: true, unique: true},
   password: {type: String, require: true},
-  rol: { type: String, enum: ['admin', 'usuario'], default: 'usuario' },
+  //rol: { type: String, enum: ['admin', 'usuario'], default: 'usuario' },
 });
 
 userSchema.methods.encryptPassword = (password) => {
