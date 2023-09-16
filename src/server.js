@@ -7,6 +7,9 @@ const morgan = require('morgan')
 const Handlebars = require('handlebars')
 const expHBS = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
+const cookieParser = require('cookie-parser'); // Importa el módulo cookie-parser
+
+
 
 // initializations 
 const app = express();
@@ -44,8 +47,20 @@ app.use(express.static(path.join(__dirname, '/public')));
 require('./server/database/database')();
 
 // app.use(router)
-//Configure database 
+//Configure database
+ 
+//config new 
+// Configura cookie-parser antes de las rutas
+app.use(cookieParser());
+// initializations 
 
+// Configurar la sesión antes de las rutas
+app.use(require('express-session')({
+  secret: 'secret_key', // Cambia esto por una clave segura
+  resave: false,
+  saveUninitialized: false
+}));
+// config new
 
 // middlewares
 app.use(morgan('dev'));
