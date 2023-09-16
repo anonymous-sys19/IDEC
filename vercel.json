@@ -2,9 +2,9 @@
    "version": 2,
    "name": "idec",
    "builds": [
-      { "src": "server.js", "use": "@vercel/node" }
+      { "src": "src/server.js", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/server.js" }
+      { "src": "src/(.*)", "dest": "/server.js" }
    ]
 }
