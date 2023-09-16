@@ -1,10 +1,10 @@
 {
    "version": 2,
-   "name": "idec",
+   "name": "idec-finca-dos",
    "builds": [
-      { "src": "server.js", "use": "@vercel/node" }
+      { "src": "src/server.js", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/server.js" }
+      { "src": "/(.*)", "dest": "src/server.js" }
    ]
 }
