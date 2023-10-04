@@ -1,15 +1,6 @@
-* {
-    box-sizing: initial;
-}
-
-article {
-    display: grid !important;
-    align-content: center;
-}
-
 header {
     width: 100%;
-    /* height: 100%; */
+    
     margin: auto;
 }
 
@@ -26,7 +17,7 @@ nav {
 .contLog {
     display: flex;
     background: white;
-    margin: 1rem auto;
+    margin:auto;
     align-items: center;
 }
 
@@ -55,109 +46,4 @@ nav {
     font-weight: 800;
     color: darkblue;
     padding: 5px;
-}
-
-/* Other part header  */
-
-.mainMenu {
-    background: url(/images/video.mp4) no-repeat center;
-    height: auto;
-    width: -webkit-fill-available;
-    /* background-size: 100% 100%; */
-    margin: auto;
-    padding: 2rem 0 3rem 2rem;
-    color: aliceblue;
-    display: grid;
-    position: relative;
-    z-index: 0;
-}
-
-/*  */
-.video-container {
-    margin: 0 0 7rem 0;
-    height: 100%;
-}
-
-.video-container video {
-    position: absolute;
-    object-fit: cover;
-    z-index: 0;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    color: aliceblue;
-}
-
-/* Just styling the content of the div, the *magic* in the previous rules */
-.video-container .caption {
-    z-index: 0;
-    position: relative;
-    text-align: center;
-    color: #dc0000;
-    padding: 10px;
-}
-
-/*  */
-
-
-/* .user-menu{
-    position: fixed;
-    right: 0;
-    top: 0;
-    margin: auto;
-} */
-.user-p {
-    font-size: 2rem;
-    border-radius: 100%;
-    /* border: 3px solid black; */
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 0.4rem;
-    position: absolute !important;
-    top: -1.5rem;
-    margin: 1rem auto;
-    color: antiquewhite;
-    left: 0;
-}
-
-
-.mainMenu img {
-    width: -webkit-fill-available;
-    height: 41.4rem;
-}
-
-.mainMenu .text1 p {
-    font-size: x-large;
-    font-weight: 400;
-}
-
-/* text2 */
-.text2 {
-    display: flex;
-}
-
-
-.text1,
-.text3 {
-    display: flex;
-}
-
-
-
-@media only screen and (max-width: 500px) {
-    .container-text {
-        display: grid;
-        padding: 3rem 0;
-        margin: auto;
-
-    }
-
-    .container-text b {
-        font-size: xx-large;
-    }
-
-    .container-text span {
-        font-size: x-large
-    }
 }

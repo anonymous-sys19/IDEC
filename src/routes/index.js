@@ -3,7 +3,6 @@ const passport = require('passport');
 const router = express.Router()
 const book = 'Enoc_libro/LibrodeEnoc.pdf';
 const path = require('path')
-const url_Text = "https://dailyverses.net/es/versiculo-de-la-biblia-al-azar"
 const userSchema = require("../models/user")
 // Publiccaciones
 const multer = require('multer');
@@ -41,6 +40,9 @@ router.get('/', (req, res, next) => {
   res.render('home', { book });
 
 });
+//Historia
+router.get("/historia", (req, res) => res.render("quienes-somos/historia"))
+
 // Biblia
 router.get('/biblia', (req, res) => {
   res.render('book/biblia')

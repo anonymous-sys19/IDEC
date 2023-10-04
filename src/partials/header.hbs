@@ -14,37 +14,48 @@
     </div>
   </div>
 
-  <nav class="navbar">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       
       
       <ul class="menu-items">
-        
-
         <li>
           <div class="dropdown">
             <a
-              class="dropdown-toggle"
+              class="dropdown-toggle  fa fa-home"
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               HOME
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li class="itemN"><a href="/" class="itemNot">Inicio</a></li>
-              <li class="itemN"><a href="#SOBRE-NOSOTROS"  class="itemNot">Quienes somos</a></li>
-              <li class="itemN"><a href="/" class="itemNot">Contactar</a></li>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+              <li ><a class="element-a fa fa-home" href="/" > Inicio</a></li>
+              <li ><a class="element-a fas fa-address-book" href="/" > Contactar</a></li>
             </ul>
 
           </div>
         </li>
-
-
-
-
-
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle fa fa-user"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+               Quienes somos
+            </a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+              <li ><a class="element-a fa fa-book" href="/historia" > Historia</a></li>
+              <li >
+                <a class="dropdown-togle element-a" href=""  >Conexión 2030</a>
+              </li>
+              <li ><a class="element-a" href="/" > Misión y Visión</a></li>
+            </ul>
+          </div>
+          </li>
         <li><a href="/publico" class="not">Publicaciones</a></li>
         {{!  }}
 
@@ -58,11 +69,13 @@
             >
               Biblia
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li class="itemN">
-                {{#if url }}
-                <a href={{biblia}} >Biblia RVR 1960</a>
-                {{/if}}
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+              <li >
+                
+                <a class="element-a fa fa-book" href="" > RVR 1960</a>
+                <a class="element-a fa fa-book" href="/biblia-Antiguo" > A-testamento</a>
+                <a class="element-a fa fa-book" href="/biblia-Nuevo" > N-testamento</a>
+                
               </li>
             </ul>
 
@@ -81,10 +94,13 @@
               >
                 Enoch
               </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li class="itemN"><a class="dropdown-item itemNot" href={{book}} target="_blank">Libro
-                    Enoc</a></li>
-                <li class="itemN"><a class="dropdown-item itemNot" href="#">Libro Enoch Video</a></li>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                <li class="">
+                  <a class="dropdown-item element-a" href={{book}} target="_blank">Libro
+                    Enoc
+                  </a>
+                </li>
+                <li class=""><a class="dropdown-item element-a" href="#">Libro Enoch Video</a></li>
 
               </ul>
 
@@ -110,12 +126,12 @@
               >
                 
               </a>
-              <ul class="dropdown-menu user-menu" aria-labelledby="dropdownMenuButton1">
-          <li class="itemN"><a href="/profile" class="not dropdown-item">Perfil</a></li>
-          <li class="itemN"><a href="/profile-admin" class="not dropdown-item">Admin</a></li>
-          <li class="itemN"><a href="/logout" class="not dropdown-item">Logout</a></li>
+              <ul class="dropdown-menu user-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                <li ><a class="element-a" href="/profile" class="not dropdown-item">Perfil</a></li>
+                <li ><a class="element-a" href="/profile-admin" class="not dropdown-item">Admin</a></li>
+                <li ><a class="element-a" href="/logout" class="not dropdown-item">Logout</a></li>
           
-          </ul>
+              </ul>
 
             </div>
           </li>
@@ -131,9 +147,9 @@
               >
                 Register
               </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li class="itemN"> <a id="element1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
-                <li class="itemN" ><a id="element2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</a></li>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                <li class=""> <a class="element-a" id="element1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+                <li class="" ><a class="element-a" id="element2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</a></li>
 
               </ul>
 
@@ -161,7 +177,7 @@
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
-  document.querySelector(".openbtn").style.display = "contents";
+  document.querySelector(".openbtn").style.display = "none";
 
 }
 

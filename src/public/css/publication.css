@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
-
+.fa-stacke{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    line-height: 2em;
+    vertical-align: middle;
+}
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -82,6 +89,10 @@ input:focus {
     border: 2px double #000000;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -moz-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -ms-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 

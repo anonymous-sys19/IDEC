@@ -28,7 +28,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #0000008f;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -40,19 +40,13 @@ body {
 
 .sidebar a {
   padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
   text-decoration-line: none;
   -moz-text-decoration-line: none;
 }
@@ -60,7 +54,8 @@ body {
 .sidebar .closebtn {
   position: relative;
   top: -28px;
-  right: -135px;
+  right: 0;
+  left: 8rem;
   font-size: 36px;
   margin-left: 50px;
 }
@@ -68,24 +63,22 @@ body {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: #1110;
+  color: black;
   padding: 10px 15px;
   border: none;
   border-radius: 10px;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
+  font-weight: 900;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background-color: #000000;
+  color: #f1f1f1;
 }
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
+  padding: 0 2px;
   -webkit-transition: margin-left .5s;
   -moz-transition: margin-left .5s;
   -ms-transition: margin-left .5s;
@@ -93,9 +86,14 @@ body {
 }
 
 .menu-items {
+  font-family: -webkit-body;
   list-style-type: none;
+  color: aqua;
 }
 
+.element-a{
+  color: #f1f1f1 !important;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {

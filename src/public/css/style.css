@@ -119,8 +119,11 @@ div.desc {
   background-color: white;
   width: 300px;
   height: 370px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1),
-      0 2px 4px -2px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1),      0 2px 4px -2px rgba(0, 0, 0, .1);
+  -webkit-border-radius: 0.75rem;
+  -moz-border-radius: 0.75rem;
+  -ms-border-radius: 0.75rem;
+  -o-border-radius: 0.75rem;
 }
 
 .header {
@@ -130,11 +133,15 @@ div.desc {
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 0.75rem;
-/*   background-color: rgb(33 150 243); */
-  box-shadow: 0 10px 15px -3px rgba(33, 150, 243, .4), 0 4px 6px -4px rgba(33, 150, 243, .4);
+  /*background-color: rgb(33 150 243);
+  */box-shadow: 0 10px 15px -3px rgba(33, 150, 243, .4), 0 4px 6px -4px rgba(33, 150, 243, .4);
   height: 14rem;
   display: flex;
   justify-content: center;
+  -webkit-border-radius: 0.75rem;
+  -moz-border-radius: 0.75rem;
+  -ms-border-radius: 0.75rem;
+  -o-border-radius: 0.75rem;
 }
 .header img{
   width: -webkit-fill-available;
@@ -188,4 +195,8 @@ div.desc {
   padding: 0.75rem 1.5rem;
   background-color: rgb(33 150 243);
   border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
