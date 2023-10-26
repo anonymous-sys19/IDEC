@@ -439,6 +439,8 @@ section h3.section-subheading {
 
 #portfolio * {
     z-index: 2;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 
 @media (min-width: 767px) {
@@ -818,6 +820,8 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 
 .portfolio-modal .close-modal {
