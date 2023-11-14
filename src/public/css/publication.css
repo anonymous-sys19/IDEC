@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+.fa-stacke{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    line-height: 2em;
+    vertical-align: middle;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-size-09 {
+    font-size: .9em;
+}
+
+input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.col {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25% !important;
+}
+
+.rows {
+    justify-content: center;
+    display: grid;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin: auto;
+
+}
+
+.card-BG {
+    background: aliceblue;
+    margin: 2rem auto;
+}
+
+.card-img-top {
+    width: 55%;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 2rem 0 2rem 0;
+}
+.cont-Form{
+    display: flex;
+    margin: auto;
+    flex: 0 0 33.333333%;
+}
+
+.rowI {
+    display: block;
+    width: max-content;
+    margin: auto;
+    padding: inherit;
+}
+.colF{
+    margin: 2rem;
+}
+.colB{
+    display: grid;
+    margin: auto;
+}
+
+.formInput {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    padding: 0.89rem 0.95rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2;
+    color: #000;
+    background-color: #ffdf7f;
+    background-clip: padding-box;
+    border: 2px double #000000;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -moz-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -ms-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.user{
+    position: relative;
+    display: flex;
+    margin: 1rem;
+   list-style: none;
+}
+.icon-user{
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    background: currentColor;
+}
+.user-onli{
+    text-align: center;
+    display: grid;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 0 0 0 1rem
+}
+@media only screen and (max-width: 900px) {
+    .card-img-top {
+        width: 90%;
+        border-top-left-radius: calc(0.25rem - 1px);
+        border-top-right-radius: calc(0.25rem - 1px);
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 2rem 0 2rem 0;
+    }
+
+    .card-BG {
+        /* background: aliceblue;
+            margin: 2rem auto; */
+        border-radius: 20px;
+    }
+}

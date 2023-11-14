@@ -1,0 +1,196 @@
+
+<header>
+  <div class="contLog">
+    <div>
+      {{!-- <img class="logoidec animate__animated animate__rotateIn" src="./images/cruz.png" alt="" width="50px" /> --}}
+      {{!-- <img class="logoidecCola animate__animated animate__zoomInLeft" src="./images/cola.png" alt="" width="50px" /> --}}
+      <img class="logoidecCola animate__animated animate__zoomInLeft" src="./images/logo-idec.png" alt="" width="100px" />
+
+    </div>
+    {{!-- <div class="letTitle animat animate__animated animate__zoomInUp">
+      <li class="listIDEC animate1"><span class="listSpanIDEC">I</span></li>
+      <li class="listIDEC animate2 "><span class="listSpanIDEC">D</span></li>
+      <li class="listIDEC animate3 "><span class="listSpanIDEC">E</span></li>
+      <li class="listIDEC animate4 "><span class="listSpanIDEC">C</span></li>
+    </div> --}}
+
+    <div class="loading">
+      <span class="listSpanIDEC">I</span>
+      <span class="listSpanIDEC">D</span>
+      <span class="listSpanIDEC">E</span>
+      <span class="listSpanIDEC">C</span>
+    </div>
+  </div>
+ {{!-- style="background-color: #e3f2fd;" --}}
+  <nav class="navbar navbar-light">
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+      
+      
+      <ul class="menu-items">
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle  fa fa-home"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              HOME
+            </a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+              <li ><a class="element-a fa fa-home" href="/" > Inicio</a></li>
+              <li ><a class="element-a fas fa-address-book" href="/" > Contactar</a></li>
+            </ul>
+
+          </div>
+        </li>
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle fa fa-user"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+               Quienes somos
+            </a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+              <li ><a class="element-a fa fa-book" href="/historia" > Historia</a></li>
+              <li >
+                <a class="dropdown-togle element-a" href=""  >Conexión 2030</a>
+              </li>
+              <li ><a class="element-a" href="/" > Misión y Visión</a></li>
+            </ul>
+          </div>
+          </li>
+        <li><a href="/publico" class="not">Publicaciones</a></li>
+        {{!  }}
+
+        <li>
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle not"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Biblia
+            </a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+              <li >
+                
+                <a class="element-a fa fa-book" href="/biblia" > RVR 1960</a>
+                
+                
+              </li>
+            </ul>
+
+          </div>
+        </li>
+        {{!  }}
+        {{!  }}
+        {{#if user}}
+          <li>
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle not"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Enoch
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                <li class="">
+                  <a class="dropdown-item element-a" href={{book}} target="_blank">Libro
+                    Enoc
+                  </a>
+                </li>
+                <li class=""><a class="dropdown-item element-a" href="#">Libro Enoch Video</a></li>
+
+              </ul>
+
+            </div>
+          </li>
+        {{/if}}
+        {{!  }}
+        {{#if user}}  
+          
+            <li class=""><a href="/new-upload" class="Not" target="_blank">Upload</a></li>
+          
+        {{/if}}
+
+        
+
+        {{!  }}
+        {{#if user}}
+        
+          <div class="btn-group dropend user-p">
+              <a
+                class="fa fa-user user-logo"
+                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
+              >
+                
+              </a>
+              <ul class="dropdown-menu user-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                <li ><a class="element-a" href="/profile" class="not dropdown-item">Perfil</a></li>
+                <li ><a class="element-a" href="/profile-admin" class="not dropdown-item">Admin</a></li>
+                <li ><a class="element-a" href="/logout" class="not dropdown-item">Logout</a></li>
+          
+              </ul>
+
+            </div>
+          </li>
+        
+        {{else}}
+          <li>
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Register
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                <li class=""> <a class="element-a" id="element1" href="/signin">Login</a></li>
+                <li class="" ><a class="element-a" id="element2" href="/signup">Sign Up</a></li>
+
+              </ul>
+
+            </div>
+          </li>
+        {{/if}}
+
+        {{!  }}
+
+      </ul>
+
+    </div>
+    
+
+  </nav>
+
+</header>
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.querySelector(".openbtn").style.display = "none";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.querySelector(".openbtn").style.display = "";
+}
+</script>

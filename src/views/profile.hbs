@@ -1,0 +1,24 @@
+{{ layouts/main }}
+{{> header}}
+
+ <div class="profile">
+  <div class="card-border-top">
+  </div>
+  <div class="img fa fa-user-circle">
+   
+  </div>
+
+{{#if user}}
+   <span>Perfil {{#each user}}
+      
+  {{username}}
+    
+   {{/each}}</span>
+{{/if}}
+ <p class="job">Bien venido 
+  {{#each user}}
+
+    {{username}} 
+
+  {{/each}}</p> 
+

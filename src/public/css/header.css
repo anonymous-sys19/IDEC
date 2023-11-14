@@ -1,0 +1,54 @@
+header {
+    /* width: 100%;   */
+    /* margin: auto; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: lavender;
+}
+
+nav {
+    justify-content: start;
+    display: flex;
+    align-items: center;
+}
+
+.mynav:hover {
+    background-color: rgba(0, 0, 0, 0.168);
+}
+
+.contLog {
+    display: flex;
+    /* background: white; */
+    margin:auto;
+    align-items: center;
+    position: fixed;
+}
+
+.letTitle {
+    display: inline-flex;
+}
+
+.logoidec {
+    width: 70px;
+    height: 70px;
+}
+
+.listIDEC {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoidecCola {
+    /* width: 23px; */
+        /* width: revert-layer; */
+    /* height: -webkit-fill-available; */
+    padding: 1rem;
+}
+
+.listSpanIDEC {
+    font-size: 3rem;
+    font-weight: 800;
+    color: darkblue;
+    padding: 5px;
+}

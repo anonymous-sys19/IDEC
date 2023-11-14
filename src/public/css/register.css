@@ -1,0 +1,243 @@
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1.5px solid #87b2bf;
+  box-sizing: border-box;
+
+  background: #f1f1f1;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  color: #87b2bf;
+
+}
+/* placeholder is title undered3 input */
+input::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: #87b2bf;
+}
+
+/* Set a style for all buttons */
+.button-login {
+  background-color: #5e17ebcc;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+
+
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+button:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+/* Flex off content PC */
+
+.cont-form {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+
+}
+
+.cont-fom {
+  margin: 1rem;
+  text-align: center;
+
+  width: 300px;
+  height: 400px;
+
+  & .text-h {
+    text-align: center;
+  }
+}
+
+picture img {
+  width: 330px;
+  height: 400px;
+  margin: 0 4rem 0 0;
+}
+
+/* Media screend */
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 800px) {
+  .cont-form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* width: 650px; */
+    height: 700px;
+
+
+  & .cont-fom{
+    border: 2px solid #87b2bf;
+    width: 500px;
+    height: 600px;
+    position: absolute;
+
+    & form{
+      width: 450px;
+      height: 500px;
+      display: grid;
+      margin: 1rem auto;
+
+    }
+    
+  }
+
+  & picture img{
+    width: 400px;
+    height: 500px;
+    z-index: 1;
+
+  }
+  
+  }
+  
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+
+}
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 500px) {
+  .cont-form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 400px;
+    height: 500px;
+
+
+  & .cont-fom{
+    border: 2px solid #87b2bf;
+    width: 350px;
+    height: 450px;
+    position: absolute;
+
+    & form{
+      width: 300px;
+      height: 350px;
+      display: grid;
+      margin: 1rem auto;
+
+    }
+    
+  }
+
+  & picture img{
+    width: 300px;
+    height: 350px;
+    z-index: -1;
+    position: relative;
+    margin: auto;
+
+  }
+  
+  }
+  
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+
+}

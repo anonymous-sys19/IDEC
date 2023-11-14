@@ -1,0 +1,65 @@
+{{layouts/main}}
+{{>header}}
+
+<div class="cont-form">
+  <div class="cont-fom">
+    <div class="container text-h">
+      <h2 style="color: #8c52ff;">
+        Register
+      </h2>
+      <span style="color: #87b2bf;">
+        Welcome IDEC
+      </span>
+    </div>
+    <form class="animate" action="/signup" method="post">
+      <div class="container">
+        <input type="text" placeholder="Username" name="username" required />
+
+        <input type="text" placeholder="Email" name="email" required />
+
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="password-repeat"
+          required
+        />
+
+        <label>
+          <input
+            type="checkbox"
+            checked="checked"
+            name="remember"
+            style="margin-bottom:15px"
+          />
+          Remember me
+        </label>
+
+        <p>
+          Al crear una cuenta aceptas nuestros
+          <a href="#" style="color:dodgerblue">
+            Terms & Privacy
+          </a>
+          .
+        </p>
+
+        <button type="submit" class="button-login">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+
+  {{!  }}
+  <div class="">
+    <picture>
+      <img src="./images/logo-idec.png" alt="" />
+    </picture>
+  </div>
+</div>

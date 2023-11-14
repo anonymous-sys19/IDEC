@@ -1,0 +1,60 @@
+{{layouts/main}}
+{{>header}}
+
+
+  <div class="cont-form">
+    <div class="cont-fom">
+      <div class="container text-h">
+        <h2 style="color: #8c52ff;">
+          Logín
+        </h2>
+        <span style="color: #87b2bf;">
+          Welcome IDEC
+        </span>
+      </div>
+      <form class="animate" action="/signin" method="post">
+        <div class="container">
+         
+          <input
+            class="inputs"
+            type="text"
+            placeholder="Username"
+            name="username"
+            required
+          />
+
+       
+          <input
+            class="inputs"
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+
+          {{!  }}
+
+          <div class="container" style="color: #5E17EB;">
+            <span class="psw">
+              Forgot
+              <a href="#">
+                password
+              </a>
+            </span>
+          </div>
+          {{!  }}
+
+          <button type="submit" class="button-login">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+
+    {{!  }}
+    <div class="">
+      <picture>
+        <img src="./images/logo-idec.png" alt="" />
+      </picture>
+    </div>
+  </div>

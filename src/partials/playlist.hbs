@@ -1,0 +1,52 @@
+<section class="section my-4">
+  <div class="container text-center">
+    <div class="title py-5">
+      <h1>Node File Uploader</h1>
+      <p class="subtitle">Upload Music to the <strong>Server</strong></p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="cont-Form">
+
+        <html>
+          <head>
+            <title>Subir archivo .mp3</title>
+          </head>
+          <body>
+            {{#if error}}
+              <p>{{error}}</p>
+            {{/if}}
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+              {{!-- <input type="file" name="mp3File" class="formInput" /> --}}
+              <input type="file" name="mp3Files" class="formInput" multiple>
+
+              <input type="submit" value="Subir archivo" class="btn btn-warning" />
+            </form>
+          </body>
+        </html>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+{{!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Archivos subidos</title>
+</head>
+<body>
+  <h1>Archivos subidos correctamente:</h1>
+  {{#each mp3Files}}
+    <audio controls>
+      <source src="/uploads/{{this.filename}}" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  {{/each}}
+</body>
+</html>
+
+ --}}

@@ -1,0 +1,71 @@
+.profile {
+    width: auto;
+    height: auto;
+    background-image: linear-gradient(10deg, #141619, #dee2e6 60%, #141619);
+    border: none;
+    position: relative;
+    font-family: inherit;
+    margin: 0.5rem 1rem;
+    padding: 2rem 0;
+}
+
+.profile span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+}
+
+.profile .job {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+}
+
+.profile .img {
+    width: 100px;
+    height: 100px;
+    background: #e8e8e8;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+}
+.fa-user-circle:before {
+    content: "\f2bd";
+    width: 70px;
+    height: 70px;
+    background: #9bffa769;
+    border-radius: 100%;
+    margin: auto;
+    font-size: 100;
+    display: flex;
+    justify-content: center;
+}
+/* .profile button {
+    padding: 1rem 6rem;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 30px;
+    background: #e8e8e8;
+    color: #111111;
+    font-weight: 600;
+    width: auto;
+}
+
+.profile button:hover {
+    background: #212121;
+    color: #ffffff;
+} */
+
+.user-table{
+    margin: 2rem 1rem;
+    background: gainsboro;
+}
