@@ -44,7 +44,6 @@ app.set('view engine', 'hbs')
 
 // Obteniendo Las Rutas static
 app.use(express.static(path.join(__dirname, '/public')));
-require('./server/database/database')();
 
 // app.use(router)
 //Configure database

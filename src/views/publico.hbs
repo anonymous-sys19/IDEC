@@ -18,32 +18,28 @@
 
               <div class="row text-center">
         {{#each images}}
-          {{#each this}}
-            {{#if imageBase64}}
                 <div class="col-md-4">
                   <span class="fa-stacke fa-4x">
                     
                     <img
-                        src="data:{{contentType}};base64,{{imageBase64}}"
-                        class="card-img-top"
-                        class="img-fluid"
-                        alt="..."
+                        src="{{secure_url}}"
+                        class="card-img-top img-fluid"
+                        alt="{{public_id}}"
+                        style="max-width: 300px; margin: 10px;"
                       />
                   </span>
-                  <h4 class="service-heading">
-                    Here is a pokok
-                  </h4>
-                  <p class="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-                  </p>
+                  
+                  
+                    <p class="text-muted" style="text-align: center; font-size: 16px;">{{overlay.text}}</p>
+                  
                 </div>
-            {{/if}}
+            
           {{/each}}
-        {{/each}}
               </div>
 
         {{! /bootstrap cads }}
       </div>
     </section>
+
 
 

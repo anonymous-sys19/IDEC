@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
       <div class="cont-Form">
         <form
-          action="/uploadmultiple"
+          action="/upload"
           enctype="multipart/form-data"
           method="POST"
         >
@@ -18,17 +18,20 @@
               <input
                 type="file"
                 class="formInput"
-                name="images"
+                name="image"
+                accept="image/*"
                 id="formFile"
+                required
                 multiple
               />
+              <label for="mensaje"> Texto Superpuesto</label>
+               <input type="text" name="mensaje"  placeholder="Escribe un msj, #EVENTO">
             </div>
             <div class="colB">
-              <input
+              <button
                 type="submit"
                 class="btn btn-warning"
-                value="Upload Images"
-              />
+              >Subir</button>
             </div>
           </div>
         </form>

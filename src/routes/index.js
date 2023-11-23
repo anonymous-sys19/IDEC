@@ -6,15 +6,36 @@ const path = require('path')
 const userSchema = require("../models/user")
 // Publiccaciones
 const multer = require('multer');
-const mongoose = require('mongoose');
-const controller = require('../server/controller/controller');
-const store = require('../server/middleware/multer')
-const UploadModel = require('../server/model/schema');
+// const mongoose = require('mongoose');
+// const controller = require('../controller/controller');
+// const UploadModel = require('../model/schema');
 const fs = require('fs');
 const user = require('../models/user');
 const jwt = require('jsonwebtoken');
-//Routing
+const { log } = require('console');
+//cloudonary
+const cloudinary = require("cloudinary").v2
+const streamifier = require('streamifier'); // Asegúrate de tener instalado 'streamifier'
+const { Readable } = require('stream'); 
+ 
 
+//COnfiguro cloudinary con mis credenciales 
+
+cloudinary.config({
+  cloud_name: 'dhxfbv30w',
+  api_key: '479318794826922',
+  api_secret: 'P_Yg8uY1vwdABFOk42LTcgA5h2U',
+  //secure: true,  
+});
+//Routing
+ 
+
+
+//COnfiguro multer para manejar  los archivos
+const storage = multer.memoryStorage();
+const upload = multer({
+  storage: storage
+});
 
 //// Middleware para verificar el token de autenticación
 function authenticateToken(req, res, next) {
@@ -35,7 +56,7 @@ function authenticateToken(req, res, next) {
 
 
 
-// Views images fom db
+// Views   Home 
 router.get('/', (req, res, next) => {
   res.render('home', { book });
 
@@ -48,12 +69,57 @@ router.get('/biblia', (req, res) => {
   res.render('book/biblia')
 })
 // routes
-router.get('/new-upload', (req, res) => {
+router.get('/upload', (req, res) => {
   res.render('upload/upload-files')
 })
-router.post('/uploadmultiple', store.array('images', 12), controller.uploads)
-// router.post('/upload', upload.array('mp3Files', 5), controller.uploads_mp3)
+//Ruta para manejar la carga de la imagen 
 
+// ...
+
+// Ruta para manejar la carga de imágenes
+// Ruta para manejar la carga de imágenes
+router.post('/upload', upload.single('image'), async (req, res) => {
+  try {
+    // Convierte el búfer a un flujo legible
+    const stream = Readable.from(req.file.buffer);
+
+    // Mensaje de texto que se superpondrá en la imagen
+    const textOverlay = req.body.mensaje || 'TuTextoPredeterminado';
+
+    // Sube la imagen a Cloudinary usando upload_stream
+    const result = await new Promise((resolve, reject) => {
+      const cloudinaryStream = cloudinary.uploader.upload_stream(
+        {
+          folder: 'IDEC_Galery',
+          public_id: req.file.originalname,
+          resource_type: 'auto',
+          overlay: `text:${textOverlay}`, // Agrega el texto superpuesto
+          gravity: 'south', // Ajusta la posición del texto
+          font_family: 'Arial', // Ajusta la fuente del texto
+          font_size: 20 // Ajusta el tamaño del texto
+        },
+        (error, result) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result);
+          }
+        }
+      );
+
+      // Pasa el flujo a Cloudinary
+      stream.pipe(cloudinaryStream);
+    });
+
+    console.log('Imagen subida a Cloudinary:', result);
+
+    // Redirige a la página principal después de la carga
+    res.redirect('/');
+  } catch (error) {
+    console.error('Error al subir imagen a Cloudinary', error);
+    res.status(500).send('Error interno del servidor');
+  }
+});
 //Files book enock
 router.get('/book', isAuthenticated, (req, res, next) => {
   res.render('book/index', { book })
@@ -129,36 +195,45 @@ router.get("/profile", authenticateToken, (req, res, next) => {
 
 //Public
 router.get("/publico", async (req, res, next) => {
-  const all_images = await UploadModel.find()
-  //console.log(all_images);
-  res.render('publico', { images: all_images });
-})
-
-router.delete("/publico/:id", async (req, res) => { //Delete image of publication
-  const id = req.params.id
-  console.log(id);
-
   try {
-    const all_id = await UploadModel.findByIdAndDelete({ _id: id })
-    console.log(all_id);
+    //Obtengo las imagenes de Claudimary 
+    const images = await cloudinary.search
+      .expression('folder:IDEC_Galery')
+      .execute();
 
-    if (!all_id) {
-      res.json({
-        estado: false,
-        message: "No se pudo eliminar"
-      })
-
-    } else {
-      res.json({
-        estado: true,
-        message: "Eliminso"
-      })
-    }
+    //renderizo la vista con las imagenes 
+    res.render('publico', { images: images.resources })
+    
   } catch (error) {
-
+    res.status(500).send("Error interno del Servidor.")
   }
-
 })
+
+// router.delete("/publico/:id", async (req, res) => { //Delete image of publication
+//   const id = req.params.id
+//   console.log(id);
+
+//   try {
+//     const all_id = await UploadModel.findByIdAndDelete({ _id: id })
+//     console.log(all_id);
+
+//     if (!all_id) {
+//       res.json({
+//         estado: false,
+//         message: "No se pudo eliminar"
+//       })
+
+//     } else {
+//       res.json({
+//         estado: true,
+//         message: "Eliminso"
+//       })
+//     }
+//   } catch (error) {
+
+//   }
+
+// })
 
 // Logaour 
 router.get('/logout', function (req, res, next) {
