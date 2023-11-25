@@ -6,18 +6,26 @@ const path = require('path')
 const userSchema = require("../models/user")
 // Publiccaciones
 const multer = require('multer');
-// const mongoose = require('mongoose');
-// const controller = require('../controller/controller');
-// const UploadModel = require('../model/schema');
+
 const fs = require('fs');
-const user = require('../models/user');
-const jwt = require('jsonwebtoken');
-const { log } = require('console');
+//const user = require('../models/user');
+
 //cloudonary
 const cloudinary = require("cloudinary").v2
 const streamifier = require('streamifier'); // Asegúrate de tener instalado 'streamifier'
 const { Readable } = require('stream'); 
  
+//
+ // routes
+ const AdminBro = require('admin-bro')
+ const expressAdminBro = require('@admin-bro/express')
+ const mongooseAdminBro = require('@admin-bro/mongoose')
+ 
+ const user = require('../models/user');
+ const conexion = require('../database');
+ conexion.once('open', () => console.log("Connexion:  True"))
+ conexion.on('error', () => console.log(`Connexion: False [ ${error} ]`))
+
 
 //COnfiguro cloudinary con mis credenciales 
 
@@ -36,6 +44,14 @@ const isAdmin = (req, res, next) => {
   res.redirect("/")
 
 }
+
+AdminBro.registerAdapter(mongooseAdminBro)
+const AdminBroOptions =  { resources: [user]}
+
+const adminBro = new AdminBro(AdminBroOptions)
+const routers = expressAdminBro.buildRouter(adminBro)
+router.use(adminBro.options.rootPath, routers)
+
 //Routing
  
 
@@ -137,18 +153,18 @@ router.post('/signin', passport.authenticate('local-signin', {
 }));
 
 
-router.get("/profile-admin", isAdmin, (req, res, next) => {
-  userSchema
-    .find()
-    .then(data => {
-      res.render("administrativo", { data: data.map(datos => datos.toJSON()) })
-      //res.json(data)
+  // userSchema
+  //   .find()
+  //   .then(data => {
+  //     res.render("administrativo", { data: data.map(datos => datos.toJSON()) })
+  //     //res.json(data)
 
-    })
-    .catch((error) => res.json({ mesagge: error }))
+  //   })
+  //   .catch((error) => res.json({ mesagge: error }))
 
-  //res.json(data)
-})
+ 
+
+
 //  IS redirect to profile
 //VIEW USER ALL 
 router.get("/profile", isAuthenticated, (req, res, next) => {

@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser'); // Importa el módulo cookie-pars
 
 // initializations 
 const app = express();
-require('./database');
+require('./database')
 require('./passport/local-auth');
 app.use(express.json())
 
@@ -45,8 +45,7 @@ app.set('view engine', 'hbs')
 // Obteniendo Las Rutas static
 app.use(express.static(path.join(__dirname, '/public')));
 
-// app.use(router)
-//Configure database
+
  
 //config new 
 // Configura cookie-parser antes de las rutas
@@ -80,7 +79,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// routes
+
+
 app.use('/', require('./routes/index'));
 
 // On Port: 
