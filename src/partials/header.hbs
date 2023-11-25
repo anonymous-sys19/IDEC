@@ -121,7 +121,7 @@
         {{!  }}
         {{#if user}}  
           
-            <li class=""><a href="/new-upload" class="Not" target="_blank">Upload</a></li>
+            <li class=""><a href="/upload" class="Not" target="_blank">Upload</a></li>
           
         {{/if}}
 
@@ -139,7 +139,9 @@
               </a>
               <ul class="dropdown-menu user-menu bg-dark" aria-labelledby="dropdownMenuButton1">
                 <li ><a class="element-a" href="/profile" class="not dropdown-item">Perfil</a></li>
-                <li ><a class="element-a" href="/profile-admin" class="not dropdown-item">Admin</a></li>
+                {{#if isAdmin}}
+                  <li ><a class="element-a" href="/profile-admin" class="not dropdown-item">Admin</a></li>
+                {{/if}}
                 <li ><a class="element-a" href="/logout" class="not dropdown-item">Logout</a></li>
           
               </ul>

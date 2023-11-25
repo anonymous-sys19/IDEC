@@ -15,7 +15,7 @@
     
    {{/each}}</span>
 {{/if}}
- <p class="job">Bien venido 
+ <p class="job">Bienvenido 
   {{#each user}}
 
     {{username}} 
@@ -25,10 +25,12 @@
 
   <section class="user-table">
     <div class="user-table-div">
-      <table id="example" class="display" style="width:100%">
-        <thead>
+      <table  class="table table-dark table-hover table-bordered border-primary" style="width:100%">
+        <caption>List the Users</caption>
+        <thead class="table-light">
             <tr>
               <th>ID</th>
+              <th>Roll</th>
               <th>Nombre</th>
               <th>Correo</th>
               <th>Password</th>
@@ -41,6 +43,7 @@
         
             <tr>
               <td>{{_id}}</td>
+              <td>{{rol}}</td>
               <td>{{ username }}</td>
               <td>{{ email }}</td>
               <td>{{ password }}</td>
@@ -54,13 +57,3 @@
   </section>
 
 </div>
-
-<script>
-  $(document).ready(function () {
-    $('#example').DataTable({
-        scrollY: '200px',
-        scrollCollapse: true,
-        paging: false,
-    });
-});
-</script>

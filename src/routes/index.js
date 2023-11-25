@@ -27,6 +27,15 @@ cloudinary.config({
   api_secret: 'P_Yg8uY1vwdABFOk42LTcgA5h2U',
   //secure: true,  
 });
+
+// Middleware para verificar la autenticacion y el rol de admin
+const isAdmin = (req, res, next) => {
+  if (req.isAuthenticated() && req.user.rol === 'Admin') {
+    return next(); //Usuario autenticado y es Administrador 
+  }
+  res.redirect("/")
+
+}
 //Routing
  
 
@@ -37,28 +46,10 @@ const upload = multer({
   storage: storage
 });
 
-//// Middleware para verificar el token de autenticación
-function authenticateToken(req, res, next) {
-  const token = req.cookies.access_token;
-  if (!token) {
-    return res.status(401).json({ error: 'Token de autenticación no proporcionado.' });
-  }
-  jwt.verify(token, 'secret_key', (err, user) => {
-    if (err) {
-      return res.status(403).json({ error: 'Token de autenticación inválido.' });
-    }
-    console.log(user);
-    req.user = user; // Asignar toda la información del usuario a req.user
-    next();
-  });
-}
-
-
-
 
 // Views   Home 
 router.get('/', (req, res, next) => {
-  res.render('home', { book });
+  res.render('home', { book});
 
 });
 //Historia
@@ -84,7 +75,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     const stream = Readable.from(req.file.buffer);
 
     // Mensaje de texto que se superpondrá en la imagen
-    const textOverlay = req.body.mensaje || 'TuTextoPredeterminado';
+    //const textOverlay = req.body.mensaje || 'TuTextoPredeterminado';
 
     // Sube la imagen a Cloudinary usando upload_stream
     const result = await new Promise((resolve, reject) => {
@@ -93,10 +84,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
           folder: 'IDEC_Galery',
           public_id: req.file.originalname,
           resource_type: 'auto',
-          overlay: `text:${textOverlay}`, // Agrega el texto superpuesto
-          gravity: 'south', // Ajusta la posición del texto
-          font_family: 'Arial', // Ajusta la fuente del texto
-          font_size: 20 // Ajusta el tamaño del texto
+          
         },
         (error, result) => {
           if (error) {
@@ -140,7 +128,7 @@ router.post('/signup', passport.authenticate('local-signup', {
 router.get('/signin', (req, res, next) => {
   res.render('login/signin');
 });
-
+// passport.authenticate
 
 router.post('/signin', passport.authenticate('local-signin', {
   successRedirect: '/profile',
@@ -148,32 +136,8 @@ router.post('/signin', passport.authenticate('local-signin', {
   failureFlash: true
 }));
 
-// Ruta para el inicio de sesión
-// router.post('/signin', passport.authenticate('local-signin', { session: false }), async (req, res) => {
-//   try {
-//     const { username } = req.user;
-//     const user = await userSchema.findOne({ username });
-//     if (!user) {
-//       return res.status(404).json({ error: 'Usuario no encontrado.' });
-//     }
-    
-//     const token = jwt.sign({ id: user._id, rol: user.rol }, 'secret_key');
-//     res.cookie('access_token', token, { httpOnly: true });
-//     //res.redirect('/profile'); // Sin pasar el token como parámetro
-//     console.log(token);
-//     console.log(user);
-//     res.json({token})
-//   } catch (error) {
-//     res.status(500).json({ error: 'Error al iniciar sesión.' });
-//   }
-// });
 
-
-
-
-// Profile 
-// isAuthenticated => Validate if Autenticate
-router.get("/profile-admin", authenticateToken, (req, res, next) => {
+router.get("/profile-admin", isAdmin, (req, res, next) => {
   userSchema
     .find()
     .then(data => {
@@ -187,7 +151,7 @@ router.get("/profile-admin", authenticateToken, (req, res, next) => {
 })
 //  IS redirect to profile
 //VIEW USER ALL 
-router.get("/profile", authenticateToken, (req, res, next) => {
+router.get("/profile", isAuthenticated, (req, res, next) => {
   res.render("profile")
   //res.json(data)
 
@@ -208,34 +172,6 @@ router.get("/publico", async (req, res, next) => {
     res.status(500).send("Error interno del Servidor.")
   }
 })
-
-// router.delete("/publico/:id", async (req, res) => { //Delete image of publication
-//   const id = req.params.id
-//   console.log(id);
-
-//   try {
-//     const all_id = await UploadModel.findByIdAndDelete({ _id: id })
-//     console.log(all_id);
-
-//     if (!all_id) {
-//       res.json({
-//         estado: false,
-//         message: "No se pudo eliminar"
-//       })
-
-//     } else {
-//       res.json({
-//         estado: true,
-//         message: "Eliminso"
-//       })
-//     }
-//   } catch (error) {
-
-//   }
-
-// })
-
-// Logaour 
 router.get('/logout', function (req, res, next) {
   res.clearCookie('access_token');
   req.logout(function (err) {
@@ -243,7 +179,7 @@ router.get('/logout', function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.redirect('login');
+    res.redirect('signin');
   });
 });
 
