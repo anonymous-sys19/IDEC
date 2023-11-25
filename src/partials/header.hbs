@@ -139,9 +139,14 @@
               </a>
               <ul class="dropdown-menu user-menu bg-dark" aria-labelledby="dropdownMenuButton1">
                 <li ><a class="element-a" href="/profile" class="not dropdown-item">Perfil</a></li>
-                {{#if isAdmin}}
-                  <li ><a class="element-a" href="/profile-admin" class="not dropdown-item">Admin</a></li>
+                
+                {{#if currentUser}}
+                  {{#if eq currentUser.rol 'Admin'}}
+                    <li ><a class="element-a" href="/admin-panel" class="not dropdown-item">Admin</a></li>
+                  {{/if}}
+                   
                 {{/if}}
+                
                 <li ><a class="element-a" href="/logout" class="not dropdown-item">Logout</a></li>
           
               </ul>

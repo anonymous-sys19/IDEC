@@ -26,6 +26,10 @@ const { Readable } = require('stream');
  conexion.once('open', () => console.log("Connexion:  True"))
  conexion.on('error', () => console.log(`Connexion: False [ ${error} ]`))
 
+// Midleware para pasar datos del Usuario Alas Vistas
+// router.use((req, res, next) => {
+//   res.locals.currentUser = req.user
+// })
 
 //COnfiguro cloudinary con mis credenciales 
 
@@ -36,21 +40,22 @@ cloudinary.config({
   //secure: true,  
 });
 
-// Middleware para verificar la autenticacion y el rol de admin
+//Middleware para verificar la autenticacion y el rol de admin
 const isAdmin = (req, res, next) => {
-  if (req.isAuthenticated() && req.user.rol === 'Admin') {
-    return next(); //Usuario autenticado y es Administrador 
+  //verifica si el usuario esta Autenticado
+  if (req.isAuthenticated()) {
+    //Verifica si el Usuario es UN administrador
+    if (req.user.rol === "Admin") {
+      return next(); //Permite el access si es un usuario admini and autenticado
+    }  else{
+      res.status(403).send("Access prohivido no eres Admin");
+
+    }
+     
+  }else{
+    res.redirect('/')
   }
-  res.redirect("/")
-
-}
-
-AdminBro.registerAdapter(mongooseAdminBro)
-const AdminBroOptions =  { resources: [user]}
-
-const adminBro = new AdminBro(AdminBroOptions)
-const routers = expressAdminBro.buildRouter(adminBro)
-router.use(adminBro.options.rootPath, routers)
+};
 
 //Routing
  
@@ -62,10 +67,11 @@ const upload = multer({
   storage: storage
 });
 
-
+ 
 // Views   Home 
 router.get('/', (req, res, next) => {
-  res.render('home', { book});
+  res.render('home', {isAdmin})
+  // { currentUser: res.locals.currentUser }
 
 });
 //Historia
@@ -161,7 +167,15 @@ router.post('/signin', passport.authenticate('local-signin', {
 
   //   })
   //   .catch((error) => res.json({ mesagge: error }))
-
+router.get('/admin-panel', isAdmin,(req, res) => {
+  AdminBro.registerAdapter(mongooseAdminBro)
+  const AdminBroOptions =  { resources: [user]}
+  
+  const adminBro = new AdminBro(AdminBroOptions)
+  const routers = expressAdminBro.buildRouter(adminBro)
+  router.use(adminBro.options.rootPath, routers)
+  res.redirect('admin')
+  })
  
 
 
