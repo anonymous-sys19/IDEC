@@ -8,7 +8,8 @@ const Handlebars = require('handlebars')
 const expHBS = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const cookieParser = require('cookie-parser'); // Importa el módulo cookie-parser
-
+//Requiro helper eq para verificar si es admin o no  mi Usuario
+const { if_eq } = require("./helpers/hbs")
 
 
 // initializations 
@@ -29,12 +30,11 @@ var hbs = expHBS.create({
   // layoutsDir:'views/loyauts',
   partialsDir: path.join(__dirname, './partials'),
   handlebars: allowInsecurePrototypeAccess(Handlebars),
-  helpers: {
-    durations: function (index) {
-      return this.durations[index];
-    }
+  helpers: { 
+    if_eq: if_eq
   }
 })
+
 app.engine('hbs', hbs.engine)
 
 app.set('views', path.join(__dirname, './views'));
@@ -79,6 +79,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Middleware para pasar datos del usuario a las vistas
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  //console.log('Usuario actual:', req.user);
+  next();
+});
 
 
 app.use('/', require('./routes/index'));

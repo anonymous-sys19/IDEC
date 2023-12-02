@@ -141,9 +141,9 @@
                 <li ><a class="element-a" href="/profile" class="not dropdown-item">Perfil</a></li>
                 
                 {{#if currentUser}}
-                  {{#if eq currentUser.rol 'Admin'}}
+                  {{#if_eq currentUser.rol 'Admin' }}
                     <li ><a class="element-a" href="/admin-panel" class="not dropdown-item">Admin</a></li>
-                  {{/if}}
+                  {{/if_eq}}
                    
                 {{/if}}
                 

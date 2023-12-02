@@ -26,10 +26,7 @@ const { Readable } = require('stream');
  conexion.once('open', () => console.log("Connexion:  True"))
  conexion.on('error', () => console.log(`Connexion: False [ ${error} ]`))
 
-// Midleware para pasar datos del Usuario Alas Vistas
-// router.use((req, res, next) => {
-//   res.locals.currentUser = req.user
-// })
+
 
 //COnfiguro cloudinary con mis credenciales 
 
