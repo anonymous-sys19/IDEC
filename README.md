@@ -15,3 +15,8 @@ Pagina en Desarrollo de Iglesia del evangelio completo
     "multer": "^1.4.5-lts.1",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0" -->
+
+    
+<p align="left">
+   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+</p>
