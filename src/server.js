@@ -55,8 +55,9 @@ app.use(cookieParser());
 // Configurar la sesión antes de las rutas
 app.use(require('express-session')({
   secret: 'secret_key', // Cambia esto por una clave segura
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: false,
+  
 }));
 // config new
 
