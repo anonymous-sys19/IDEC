@@ -9,7 +9,8 @@ const expHBS = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const cookieParser = require('cookie-parser'); // Importa el módulo cookie-parser
 //Requiro helper eq para verificar si es admin o no  mi Usuario
-const { if_eq } = require("./helpers/hbs")
+const { if_eq } = require("./helpers/hbs");
+const { hostname } = require('os');
 
 
 // initializations 
@@ -91,6 +92,6 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/index'));
 
 // On Port: 
-app.listen(app.get('server'), () => {
+app.listen(app.get('server'), (req, res) => {
   console.log(`Server is Running ${app.get('server')}`);
 })

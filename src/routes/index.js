@@ -40,6 +40,7 @@ const axios = require('axios');
 
 // Inicializar Firebase
 var serviceAccount = require("../../serviceAccountKey.json");
+const { hostname } = require('os');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://idec-98ffd.firebaseio.com/'
@@ -65,7 +66,7 @@ router.get('/login/google', (req, res) => {
   const scopes = ['https://www.googleapis.com/auth/plus.login'];
   const state = 'some-random-state-string';
   
-  const redirectUrl = `https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com&redirect_uri=${encodeURIComponent('https://localhost:5500/auth/google/callback')}&scope=${scopes.join('%20')}&state=${state}`;
+  const redirectUrl = `https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com&redirect_uri=${encodeURIComponent('https://iglesia-de-dios-finca-dos.onrender.com//auth/google/callback')}&scope=${scopes.join('%20')}&state=${state}`;
   
   res.redirect(redirectUrl);
 });
@@ -79,7 +80,7 @@ router.get('/auth/google/callback', async (req, res) => {
     code: code,
     client_id: '1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com',
     client_secret: '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',
-    redirect_uri: 'https://localhost:5500/auth/google/callback',
+    redirect_uri: `https://iglesia-de-dios-finca-dos.onrender.com/auth/google/callback`,
     grant_type: 'authorization_code',
   }); 
 
