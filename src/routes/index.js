@@ -66,7 +66,7 @@ router.get('/login/google', (req, res) => {
   const scopes = ['https://www.googleapis.com/auth/plus.login'];
   const state = 'some-random-state-string';
   
-  const redirectUrl = `https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com&redirect_uri=${encodeURIComponent('https://iglesia-de-dios-finca-dos.onrender.com//auth/google/callback')}&scope=${scopes.join('%20')}&state=${state}`;
+  const redirectUrl = `https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com&redirect_uri=${encodeURIComponent('https://iglesia-de-dios-finca-dos.onrender.com/auth/google/callback')}&scope=${scopes.join('%20')}&state=${state}`;
   
   res.redirect(redirectUrl);
 });
