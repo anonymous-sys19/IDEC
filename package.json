@@ -37,6 +37,7 @@
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
+    "resend": "^2.0.0",
     "streamifier": "^0.1.1",
     "tslib": "^2.6.2"
   },

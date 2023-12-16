@@ -4,12 +4,12 @@ const { getAuth } = require('firebase/auth');
 
 // Configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyCgqy1AOY0Y-F0tj7s4AvkGIwSEt89pDYg",
-  authDomain: "idec-98ffd.firebaseapp.com",
-  projectId: "idec-98ffd",
-  storageBucket: "idec-98ffd.appspot.com",
-  messagingSenderId: "510282474556",
-  appId: "1:510282474556:web:8f656b96ea3205a6e3cf39",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Inicializa Firebase

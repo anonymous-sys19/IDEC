@@ -1,0 +1,10 @@
+# docker-compose.yml
+
+version: '3'
+services:
+  your-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
