@@ -35,82 +35,15 @@ router.get('/', (req, res, next) => {
 });
  //Firebase COnfig
 
-const admin = require('firebase-admin');
 const axios = require('axios');
 
-// Inicializar Firebase
-var serviceAccount = require("../../serviceAccountKey.json");
-const { hostname } = require('os');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://idec-98ffd.firebaseio.com/'
-});
 
 
 
-// Middleware para verificar la autenticación
-const checkAuth = (req, res, next) => {
-  if (req.session.user) {
-    next();
-  } else {
-    res.redirect('/login');
-  }
-};
 
-router.get('/logout', (req, res) => {
-  req.session.user = null;
-  res.redirect('/login');
-});
 
-router.get('/login/google', (req, res) => {
-  const scopes = ['https://www.googleapis.com/auth/plus.login'];
-  const state = 'some-random-state-string';
-  
-  const redirectUrl = `https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com&redirect_uri=${encodeURIComponent('https://iglesia-de-dios-finca-dos.onrender.com/auth/google/callback')}&scope=${scopes.join('%20')}&state=${state}`;
-  
-  res.redirect(redirectUrl);
-});
-
-router.get('/auth/google/callback', async (req, res) => {
-  const { code } = req.query;
-
-  // Intercambio del código de autorización por un token de acceso
-  const tokenEndpoint = 'https://oauth2.googleapis.com/token';
-  const tokenResponse = await axios.post(tokenEndpoint, {
-    code: code,
-    client_id: '1074303537600-k97qggrkeih0apfchah4p2rhc3hl9htd.apps.googleusercontent.com',
-    client_secret: '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',
-    redirect_uri: `https://iglesia-de-dios-finca-dos.onrender.com/auth/google/callback`,
-    grant_type: 'authorization_code',
-  }); 
-
-  const accessToken = tokenResponse.data.access_token;
-  const idToken = tokenResponse.data.id_token;
-
-  // Verificar el ID token con Firebase para obtener información del usuario
-  const verifyIdTokenUrl = `https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${idToken}`;
-  const { data } = await axios.get(verifyIdTokenUrl);
-
-  // Aquí puedes utilizar la información del usuario para autenticar en Firebase
-  const { sub, email, name, picture } = data;
-
-  // Puedes usar la información para autenticar al usuario en Firebase
-  // Por ejemplo, puedes guardar el UID en la sesión
-  req.session.user = {
-    uid: sub,
-    email: email,
-    name: name,
-    picture: picture,
-  };
-
-  // Redirigir a la página de inicio o a donde desees
-  res.redirect('/');
-});
 
 // Resto de tu código para configurar el servidor, sesión, etc.
-
-// check is login  checkAuth
-//dfglhbsubj
 
 //COnfiguro cloudinary con mis credenciales 
 
