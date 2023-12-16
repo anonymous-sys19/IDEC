@@ -1,7 +1,7 @@
 const { Resend } = require("resend");
 
-const resend = new  Resend("re_8o4eUBG4_5yTkunqSHo41gt98MbLkQtah")
-
+const resend = new  Resend("")
+//re_8o4eUBG4_5yTkunqSHo41gt98MbLkQtah
 (async function(){
     try {
         const data = await resend.emails.send({
